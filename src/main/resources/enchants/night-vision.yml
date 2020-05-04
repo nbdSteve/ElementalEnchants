@@ -1,0 +1,10 @@
+max-level: 1
+
+upgrade-price: 100
+
+lore: '&eNight Vision {level}'
+
+data:
+  type: potion
+  effect: night_vision
+  duration: 999999

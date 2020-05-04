@@ -1,0 +1,10 @@
+max-level: 5
+
+upgrade-price: 50
+
+lore: '&eHaste {level}'
+
+data:
+  type: potion
+  effect: dig_speed
+  duration: 999999

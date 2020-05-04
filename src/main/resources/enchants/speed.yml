@@ -1,0 +1,10 @@
+max-level: 3
+
+upgrade-price: 50
+
+lore: '&eSpeed {level}'
+
+data:
+  type: potion
+  effect: speed
+  duration: 999999
