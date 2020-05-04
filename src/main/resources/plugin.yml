@@ -1,0 +1,7 @@
+name: ElementalEnchants
+version: ${project.version}
+main: gg.steve.elemental.ce.ElementalEnchants
+api-version: 1.13
+prefix: Enchants
+authors: [stevegoodhill]
+description: Private custom enchantment plugin for ElementalMC
