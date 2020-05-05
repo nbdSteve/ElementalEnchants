@@ -1,0 +1,13 @@
+
+7
+java:S3626\"Remove this redundant jump.(˜’ãw8Úë‘˜.
+Z
+java:S1874H"=Remove this use of "PlayerPickupItemEvent"; it is deprecated.(Éö¯º8ÅÁ˜.
+u
+java:S1192 "SDefine a constant instead of duplicating this literal "elemental-enchants" 4 times.(´¦üËıÿÿÿÿ8®´Š˜.
+V
+java:S2864P"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Âä˜˜.
+V
+java:S2864,"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Æ¥ß—.
+b
+java:S1128"@Remove this unused import 'gg.steve.elemental.ce.utils.LogUtil'.(ÂÄõ¹úÿÿÿÿ8´Êú—.

@@ -5,3 +5,10 @@ api-version: 1.13
 prefix: Enchants
 authors: [stevegoodhill]
 description: Private custom enchantment plugin for ElementalMC
+commands:
+  ece:
+    usage: /<command>
+    description: Base command for elemental enchants.
+    aliases:
+      - enchanter
+      - ce

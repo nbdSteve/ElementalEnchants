@@ -1,6 +1,7 @@
 package gg.steve.elemental.ce.managers;
 
 import gg.steve.elemental.ce.ElementalEnchants;
+import gg.steve.elemental.ce.cmd.EceCmd;
 import gg.steve.elemental.ce.core.PlayerEnchantManager;
 import gg.steve.elemental.ce.listener.HoldPickaxeListener;
 import gg.steve.elemental.ce.listener.MineListener;
@@ -29,7 +30,7 @@ public class SetupManager {
     }
 
     public static void registerCommands(ElementalEnchants instance) {
-//        instance.getCommand("ap").setExecutor(new ApCmd());
+        instance.getCommand("ece").setExecutor(new EceCmd());
     }
 
     /**

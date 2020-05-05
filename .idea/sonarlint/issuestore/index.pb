@@ -51,3 +51,9 @@ u
 Esrc/main/java/gg/steve/elemental/ce/listener/HoldPickaxeListener.java,0\1\017e0ebe832a4fbc6f93dbfb0133172fec9e9577
 l
 <src/main/java/gg/steve/elemental/ce/core/EnchantManager.java,5\1\51beb2c793b88ae3c8ea46e453b67b35ebc1345b
+c
+3src/main/java/gg/steve/elemental/ce/cmd/EceCmd.java,4\5\4541bb25d0d6b2ea7fd4f8dc94727e96176ff9fb
+n
+>src/main/java/gg/steve/elemental/ce/utils/ItemBuilderUtil.java,0\1\010987259244c5c110588f995925243226337577
+o
+?src/main/java/gg/steve/elemental/ce/utils/RomanNumeralUtil.java,1\d\1dda904a08e18d67ad5a62641c76597346eb13ea

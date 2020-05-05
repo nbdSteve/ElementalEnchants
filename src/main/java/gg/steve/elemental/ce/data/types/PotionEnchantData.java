@@ -17,9 +17,9 @@ public class PotionEnchantData implements EnchantData {
 
     public PotionEnchantData(ConfigurationSection section, Enchant enchant) {
         try {
-            this.type = PotionEffectType.getByName(section.getString("effect".toUpperCase()));
+            this.type = PotionEffectType.getByName(section.getString("effect").toUpperCase());
         } catch (Exception e) {
-            LogUtil.info("Error when enabling enchant: " + enchant.getName() + ", the potion effect: " + section.getString("effect".toUpperCase()) + " does not exist in Bukkit.");
+            LogUtil.info("Error when enabling enchant: " + enchant.getName() + ", the potion effect: " + section.getString("effect").toUpperCase() + " does not exist in Bukkit.");
         }
         this.duration = section.getInt("duration");
     }
@@ -35,10 +35,10 @@ public class PotionEnchantData implements EnchantData {
     }
 
     @Override
-    public void onHold(PlayerItemHeldEvent event, int enchantLevel) {
+    public void onHold(Player player, int enchantLevel) {
         PotionEffect effect = new PotionEffect(this.type, this.duration, enchantLevel - 1);
-        potionCheck(event.getPlayer(), this.type, enchantLevel - 1);
-        event.getPlayer().addPotionEffect(effect);
+        potionCheck(player, this.type, enchantLevel - 1);
+        player.addPotionEffect(effect);
     }
 
     @Override

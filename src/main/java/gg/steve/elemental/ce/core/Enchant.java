@@ -33,8 +33,8 @@ public class Enchant {
         this.data.remove(player, enchantLevel);
     }
 
-    public void onHold(PlayerItemHeldEvent event, int enchantLevel) {
-        this.data.onHold(event, enchantLevel);
+    public void onHold(Player player, int enchantLevel) {
+        this.data.onHold(player, enchantLevel);
     }
 
     public void onMine(BlockBreakEvent event, int enchantLevel) {

@@ -28,7 +28,11 @@ public class ItemBuilderUtil {
         this.material = item.getType();
         this.dataValue = item.getDurability();
         this.itemMeta = item.getItemMeta();
-        this.lore = item.getItemMeta().getLore();
+        if (item.getItemMeta().hasLore()) {
+            this.lore = item.getItemMeta().getLore();
+        } else {
+            this.lore = new ArrayList<>();
+        }
         this.enchantments = item.getEnchantments();
         this.flags = item.getItemMeta().getItemFlags();
     }
@@ -57,6 +61,16 @@ public class ItemBuilderUtil {
             }
             this.lore.add(ColorUtil.colorize(line));
         }
+        itemMeta.setLore(this.lore);
+        item.setItemMeta(itemMeta);
+    }
+
+    public void addLoreLine(String line, String... replacement) {
+        List<String> replacements = Arrays.asList(replacement);
+        for (int i = 0; i < this.placeholders.size(); i++) {
+            line = line.replace(this.placeholders.get(i), replacements.get(i));
+        }
+        this.lore.add(ColorUtil.colorize(line));
         itemMeta.setLore(this.lore);
         item.setItemMeta(itemMeta);
     }

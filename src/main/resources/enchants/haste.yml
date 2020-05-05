@@ -6,5 +6,5 @@ lore: '&eHaste {level}'
 
 data:
   type: potion
-  effect: dig_speed
+  effect: fast_digging
   duration: 999999
