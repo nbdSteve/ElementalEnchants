@@ -1,0 +1,14 @@
+max-level: 100
+
+upgrade:
+  type: prestige
+  price: 1
+
+lore: '&6Key Extractor {level}'
+
+data:
+  type: command
+  base-rate: 0.05 # starting proc chance
+  multiplier: 0.05 # percentage added per level
+  commands:
+    - msg {player} key extractor

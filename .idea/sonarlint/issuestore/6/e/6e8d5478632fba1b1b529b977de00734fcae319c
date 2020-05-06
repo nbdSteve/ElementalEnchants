@@ -1,10 +1,4 @@
 
->	java:S131""Add a default case to this switch.(‘ÂúÁ8©„ù€.
-e
-java:S1128	"HRemove this unused import 'org.bukkit.event.player.PlayerItemHeldEvent'.(Öş“Ø8ø¶˜.
-M
-java:S1068"0Remove this unused "upgradePrice" private field.(Şâíş8¶âì€.
 h
-java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(‘ÂúÁ8©„ù€.
-N
-java:S1068",Remove this unused "maxLevel" private field.(¸‘Ğ¶şÿÿÿÿ8¶âì€.
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(‘ÂúÁ8©„ù€.
+>	java:S131""Add a default case to this switch.(‘ÂúÁ8©„ù€.

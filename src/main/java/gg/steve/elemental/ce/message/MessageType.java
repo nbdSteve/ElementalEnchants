@@ -10,13 +10,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum MessageType {
-    PURCHASE("purchase", "{piece}", "{set-name}"),
     RELOAD("reload"),
     HELP("help"),
     GIVE_GIVER("give-piece-giver", "{player}", "{piece}", "{set-name}", "{amount}"),
     GIVE_RECEIVER("give-piece-receiver", "{piece}", "{set-name}", "{amount}"),
-    UNSAFE_WARP_LOCATION("unsafe-warp-location"),
-    INSUFFICIENT_FUNDS("insufficient-funds");
+    UNENCHANTABLE_ITEM("unenchantable-item"),
+    ENCHANT_MAX_LEVEL("enchant-max-level"),
+    UPGRADE_SUCCESS("upgrade-success", "{enchant}", "{current-level}", "{max-level}"),
+    INSUFFICIENT_TOKENS("insufficient-tokens", "{token-type}");
 
     private String path;
     private List<String> placeholders;

@@ -2,6 +2,7 @@ package gg.steve.elemental.ce.cmd;
 
 import gg.steve.elemental.ce.core.Enchant;
 import gg.steve.elemental.ce.core.EnchantManager;
+import gg.steve.elemental.ce.core.PlayerEnchantManager;
 import gg.steve.elemental.ce.nbt.NBTItem;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,7 +15,8 @@ public class EceCmd implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("ece")) {
             if (args.length == 0) {
-                // help
+                Player player = (Player) sender;
+                PlayerEnchantManager.getEnchantPlayer(player.getUniqueId()).openTokenEnchantsGui();
                 return true;
             }
             Enchant enchant;

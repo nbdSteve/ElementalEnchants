@@ -2,4 +2,12 @@ loaded-enchants:
   - speed
   - night-vision
   - haste
+  - key-extractor
+  - backpack-buster
+  - booster-finder
 
+enchantable-items:
+  - diamond_pickaxe
+  - iron_pickaxe
+  - gold_pickaxe
+  - wood_pickaxe

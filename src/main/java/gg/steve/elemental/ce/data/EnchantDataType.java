@@ -7,5 +7,6 @@ public enum EnchantDataType {
     POTION,
     MERCHANT,
     EXCAVATOR,
-    LUCK;
+    LUCK,
+    COMMAND;
 }

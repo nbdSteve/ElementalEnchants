@@ -57,3 +57,15 @@ n
 >src/main/java/gg/steve/elemental/ce/utils/ItemBuilderUtil.java,0\1\010987259244c5c110588f995925243226337577
 o
 ?src/main/java/gg/steve/elemental/ce/utils/RomanNumeralUtil.java,1\d\1dda904a08e18d67ad5a62641c76597346eb13ea
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+p
+@src/main/java/gg/steve/elemental/ce/gui/PrestigeEnchantsGui.java,5\c\5c78b17e4ef2afd847f5b23c17cb892107559fd6
+m
+=src/main/java/gg/steve/elemental/ce/gui/TokenEnchantsGui.java,9\8\98c638158aab831b513252b2cf4664801459537f
+h
+8src/main/java/gg/steve/elemental/ce/api/EnchantsApi.java,a\9\a947607f8b8d9090204361c80ce0ea416171eb60
+t
+Dsrc/main/java/gg/steve/elemental/ce/listener/BlockBreakListener.java,2\c\2c09ae0a49c6d928277ce3256b866833ceefddfa
+v
+Fsrc/main/java/gg/steve/elemental/ce/data/types/CommandEnchantData.java,c\3\c3f944f24094b2e5678ed1f09e067fbccf86d98e

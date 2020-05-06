@@ -1,6 +1,8 @@
 max-level: 5
 
-upgrade-price: 50
+upgrade:
+  type: token
+  price: 50
 
 lore: '&eHaste {level}'
 

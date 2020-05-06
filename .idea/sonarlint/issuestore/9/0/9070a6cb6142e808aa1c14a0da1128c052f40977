@@ -1,24 +1,30 @@
 
-q
-java:S1104"[Make inventoriesByID a static final constant or non-public and provide accessors if needed.(Ÿ”ôä
-
-java:S1319"wThe type of the "openInventories" object should be an interface such as "Map" rather than the implementation "HashMap".(ŠÃª˜
-3
-java:S2386"Make this member "protected".(ŠÃª˜
 ƒ
-java:S1319w"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ûä¡²
+java:S1319z"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ûä¡²
 
-java:S1319"wThe type of the "inventoriesByID" object should be an interface such as "Map" rather than the implementation "HashMap".(Ÿ”ôä
+java:S1319"wThe type of the "openInventories" object should be an interface such as "Map" rather than the implementation "HashMap".(ŠÃª˜
+ƒ
+java:S13192"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(·¤ú‰
+K
+java:S1444"5Make this "public static inventoriesByID" field final(Ÿ”ôä
+q
+java:S1104"[Make inventoriesByID a static final constant or non-public and provide accessors if needed.(Ÿ”ôä
+b
+java:S1128"@Remove this unused import 'gg.steve.elemental.ce.utils.LogUtil'.(ÂÄõ¹úÿÿÿÿ8šäüÂ.
+K
+java:S1444"5Make this "public static openInventories" field final(ŠÃª˜
+3
+java:S2386"Make this member "protected".(Ÿ”ôä
+3
+java:S2386"Make this member "protected".(ŠÃª˜
+
+java:S1319"wThe type of the "inventoriesByID" object should be an interface such as "Map" rather than the implementation "HashMap".(Ÿ”ôä
+g
+java:S1128"JRemove this unused import 'org.bukkit.configuration.ConfigurationSection'.(¿âĞâ8ÂˆóÂ.
+^
+java:S1128"ARemove this unused import 'gg.steve.elemental.ce.managers.Files'.(Ìä‰³8šäüÂ.
+q
+java:S1104"[Make openInventories a static final constant or non-public and provide accessors if needed.(ŠÃª˜
+g	java:S114"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(êÿØ“
 ˆ
-java:S13198"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ôƒ›şÿÿÿÿ
-K
-java:S1444"5Make this "public static inventoriesByID" field final(Ÿ”ôä
-K
-java:S1444"5Make this "public static openInventories" field final(ŠÃª˜
-ƒ
-java:S1319/"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(·¤ú‰
-3
-java:S2386"Make this member "protected".(Ÿ”ôä
-f	java:S114~"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(êÿØ“
-q
-java:S1104"[Make openInventories a static final constant or non-public and provide accessors if needed.(ŠÃª˜
+java:S1319;"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(Ôƒ›şÿÿÿÿ

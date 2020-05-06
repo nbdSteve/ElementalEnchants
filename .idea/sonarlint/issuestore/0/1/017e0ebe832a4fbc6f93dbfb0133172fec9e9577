@@ -1,13 +1,23 @@
 
-7
-java:S3626\"Remove this redundant jump.(˜’ãw8Úë‘˜.
-Z
-java:S1874H"=Remove this use of "PlayerPickupItemEvent"; it is deprecated.(Éö¯º8ÅÁ˜.
 u
-java:S1192 "SDefine a constant instead of duplicating this literal "elemental-enchants" 4 times.(´¦üËıÿÿÿÿ8®´Š˜.
+java:S3776“"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ç¤ù×ıÿÿÿÿ8ÚãáÀ.
+Z
+java:S1874I"=Remove this use of "PlayerPickupItemEvent"; it is deprecated.(Éö¯º8ÅÁ˜.
+W
+java:S1874b"5Remove this use of "getItemInHand"; it is deprecated.(ƒï©êûÿÿÿÿ8©¼™À.
+R
+java:S1874a"5Remove this use of "getItemInHand"; it is deprecated.(×İå8Üò•À.
+W
+java:S2864Š"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8ğ±ÈÀ.
 V
-java:S2864P"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Âä˜˜.
+java:S2864v"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Š»¯À.
 V
-java:S2864,"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Æ¥ß—.
+java:S2864Q"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Âä˜˜.
+W
+java:S2864©"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8¹µàÀ.
+u
+java:S1192""SDefine a constant instead of duplicating this literal "elemental-enchants" 9 times.(´¦üËıÿÿÿÿ8®´Š˜.
+V
+java:S2864."4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8Æ¥ß—.
 b
-java:S1128"@Remove this unused import 'gg.steve.elemental.ce.utils.LogUtil'.(ÂÄõ¹úÿÿÿÿ8´Êú—.
+java:S1128"@Remove this unused import 'gg.steve.elemental.ce.utils.LogUtil'.(ÂÄõ¹úÿÿÿÿ8ÜˆÎÀ.

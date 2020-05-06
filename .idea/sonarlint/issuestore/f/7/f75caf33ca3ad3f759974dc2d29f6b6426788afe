@@ -1,6 +1,3 @@
 
-e
-java:S1128
-"HRemove this unused import 'org.bukkit.event.player.PlayerItemHeldEvent'.(Öş“Ø8ÅÊ›˜.
 £
-java:S1186-"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›Í¥İşÿÿÿÿ8íñ¹.
+java:S1186,"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›Í¥İşÿÿÿÿ8íñ¹.

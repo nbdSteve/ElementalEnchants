@@ -1,0 +1,17 @@
+help:
+  - '&5&lEnchants &f>> &7Please contact nbdSteve#0583 on discord for command, permission and configuration help.'
+
+reload:
+  - '&5&lEnchants &f>> &7You have successfully reloaded the plugin and player data.'
+
+unenchantable-item:
+  - '&5&lEnchants &f>> &7That item can not be enchanted, please hold the pickaxe you are trying to upgrade.'
+
+enchant-max-level:
+  - '&5&lEnchants &f>> &7Your item can not be upgraded because it already has the max level for that enchantment.'
+
+upgrade-success:
+  - '&5&lEnchants &f>> &7Successfully upgraded the &6{enchant} &7enchantment to level &e{current-level}&7/&e{max-level}&7.'
+
+insufficient-tokens:
+  - '&5&lEnchants &f>> &7You do not have enough &6{token-type} &7tokens to purchase that upgrade.'

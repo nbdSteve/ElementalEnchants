@@ -9,7 +9,9 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
@@ -44,7 +46,6 @@ public class HoldPickaxeListener implements Listener {
                 for (String enchantName : enchants.keySet()) {
                     Enchant enchant = EnchantManager.getEnchant(enchantName);
                     int level = (int) Math.round(enchants.get(enchantName));
-                    enchant.onHold(player, level);
                     PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
                 }
             }
@@ -88,7 +89,89 @@ public class HoldPickaxeListener implements Listener {
     }
 
     @EventHandler
-    public void inventoryClick(InventoryClickEvent event) {
+    public void inventoryRemove(InventoryClickEvent event) {
         if (event.isCancelled()) return;
+        if (event.getCurrentItem() == null || event.getCurrentItem().getType().equals(Material.AIR)) return;
+        if (!(event.getWhoClicked() instanceof Player)) return;
+        Player player = (Player) event.getWhoClicked();
+        if (!event.getCurrentItem().equals(player.getItemInHand())) return;
+        NBTItem item = new NBTItem(player.getItemInHand());
+        if (EnchantManager.hasEnchants(item)) {
+            Map<String, Double> enchants = item.getObject("elemental-enchants", HashMap.class);
+            for (String enchantName : enchants.keySet()) {
+                Enchant enchant = EnchantManager.getEnchant(enchantName);
+                PlayerEnchantManager.removeEnchantFromPlayer(player.getUniqueId(), enchant);
+            }
+        }
+    }
+
+    @EventHandler
+    public void inventoryAdd(InventoryClickEvent event) {
+        if (event.isCancelled()) return;
+        if (event.getCursor() == null || event.getCursor().getType().equals(Material.AIR)) return;
+        if (!(event.getWhoClicked() instanceof Player)) return;
+        Player player = (Player) event.getWhoClicked();
+        if (event.getSlot() != player.getInventory().getHeldItemSlot()) return;
+        NBTItem item = new NBTItem(event.getCursor());
+        if (EnchantManager.hasEnchants(item)) {
+            Map<String, Double> enchants = item.getObject("elemental-enchants", HashMap.class);
+            for (String enchantName : enchants.keySet()) {
+                Enchant enchant = EnchantManager.getEnchant(enchantName);
+                int level = (int) Math.round(enchants.get(enchantName));
+                PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
+            }
+        }
+    }
+
+    @EventHandler
+    public void inventoryShift(InventoryClickEvent event) {
+        if (event.isCancelled()) return;
+        if (!(event.getClick().equals(ClickType.SHIFT_RIGHT) || event.getClick().equals(ClickType.SHIFT_LEFT))) return;
+        if (event.getCurrentItem() == null || event.getCurrentItem().getType().equals(Material.AIR)) return;
+        if (!(event.getWhoClicked() instanceof Player)) return;
+        Player player = (Player) event.getWhoClicked();
+        if (event.getSlotType().equals(InventoryType.SlotType.QUICKBAR)) return;
+        if (player.getInventory().firstEmpty() != player.getInventory().getHeldItemSlot()) return;
+        NBTItem item = new NBTItem(event.getCurrentItem());
+        if (EnchantManager.hasEnchants(item)) {
+            Map<String, Double> enchants = item.getObject("elemental-enchants", HashMap.class);
+            for (String enchantName : enchants.keySet()) {
+                Enchant enchant = EnchantManager.getEnchant(enchantName);
+                int level = (int) Math.round(enchants.get(enchantName));
+                PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
+            }
+        }
+    }
+
+    @EventHandler
+    public void inventoryNum(InventoryClickEvent event) {
+        if (event.isCancelled()) return;
+        if (!event.getClick().equals(ClickType.NUMBER_KEY)) return;
+        if (!(event.getWhoClicked() instanceof Player)) return;
+        Player player = (Player) event.getWhoClicked();
+        if (event.getHotbarButton() != player.getInventory().getHeldItemSlot()) return;
+        NBTItem current;
+        NBTItem slot;
+        if (player.getInventory().getItem(event.getHotbarButton()) != null && !player.getInventory().getItem(event.getHotbarButton()).getType().equals(Material.AIR)) {
+            slot = new NBTItem(player.getInventory().getItem(event.getHotbarButton()));
+            if (EnchantManager.hasEnchants(slot)) {
+                Map<String, Double> enchants = slot.getObject("elemental-enchants", HashMap.class);
+                for (String enchantName : enchants.keySet()) {
+                    Enchant enchant = EnchantManager.getEnchant(enchantName);
+                    PlayerEnchantManager.removeEnchantFromPlayer(player.getUniqueId(), enchant);
+                }
+            }
+        }
+        if (event.getCurrentItem() != null && !event.getCurrentItem().getType().equals(Material.AIR)) {
+            current = new NBTItem(event.getCurrentItem());
+            if (EnchantManager.hasEnchants(current)) {
+                Map<String, Double> enchants = current.getObject("elemental-enchants", HashMap.class);
+                for (String enchantName : enchants.keySet()) {
+                    Enchant enchant = EnchantManager.getEnchant(enchantName);
+                    int level = (int) Math.round(enchants.get(enchantName));
+                    PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
+                }
+            }
+        }
     }
 }

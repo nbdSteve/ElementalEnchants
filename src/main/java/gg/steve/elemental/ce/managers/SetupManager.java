@@ -3,6 +3,8 @@ package gg.steve.elemental.ce.managers;
 import gg.steve.elemental.ce.ElementalEnchants;
 import gg.steve.elemental.ce.cmd.EceCmd;
 import gg.steve.elemental.ce.core.PlayerEnchantManager;
+import gg.steve.elemental.ce.gui.GuiClickListener;
+import gg.steve.elemental.ce.listener.BlockBreakListener;
 import gg.steve.elemental.ce.listener.HoldPickaxeListener;
 import gg.steve.elemental.ce.listener.MineListener;
 import org.bukkit.plugin.Plugin;
@@ -40,9 +42,10 @@ public class SetupManager {
      */
     public static void registerEvents(Plugin instance) {
         PluginManager pm = instance.getServer().getPluginManager();
-//        pm.registerEvents(new DispenserArmorListener(), instance);
         pm.registerEvents(new PlayerEnchantManager(), instance);
         pm.registerEvents(new HoldPickaxeListener(), instance);
         pm.registerEvents(new MineListener(), instance);
+        pm.registerEvents(new GuiClickListener(), instance);
+        pm.registerEvents(new BlockBreakListener(), instance);
     }
 }

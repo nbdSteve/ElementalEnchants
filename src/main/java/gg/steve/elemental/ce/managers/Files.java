@@ -8,7 +8,10 @@ public enum Files {
     CONFIG("elemental-enchants.yml"),
     PERMISSIONS("permissions.yml"),
     DEBUG("lang" + File.separator + "debug.yml"),
-    MESSAGES("lang" + File.separator + "messages.yml");
+    MESSAGES("lang" + File.separator + "messages.yml"),
+    // gui
+    TOKEN_GUI("gui" + File.separator + "token-enchants.yml"),
+    PRESTIGE_GUI("gui" + File.separator + "prestige-enchants.yml");
 
     private final String path;
 

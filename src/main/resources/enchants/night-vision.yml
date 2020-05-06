@@ -1,6 +1,8 @@
 max-level: 1
 
-upgrade-price: 100
+upgrade:
+  type: token
+  price: 100
 
 lore: '&eNight Vision {level}'
 

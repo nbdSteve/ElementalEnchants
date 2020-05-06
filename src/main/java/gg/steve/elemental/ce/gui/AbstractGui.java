@@ -1,8 +1,11 @@
 package gg.steve.elemental.ce.gui;
 
+import gg.steve.elemental.ce.managers.Files;
 import gg.steve.elemental.ce.utils.ColorUtil;
+import gg.steve.elemental.ce.utils.LogUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
@@ -28,7 +31,7 @@ public abstract class AbstractGui {
     /**
      * Constructor the create a new Gui
      */
-    public AbstractGui(ConfigurationSection section, String type, Integer size) {
+    public AbstractGui(YamlConfiguration section, String type, Integer size) {
         this.inventoryID = UUID.randomUUID();
         if (!type.equalsIgnoreCase("none")) {
             this.inventory = Bukkit.createInventory(null, InventoryType.valueOf(type), ColorUtil.colorize(section.getString("name")));

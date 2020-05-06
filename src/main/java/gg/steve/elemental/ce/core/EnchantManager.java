@@ -4,14 +4,19 @@ import gg.steve.elemental.ce.ElementalEnchants;
 import gg.steve.elemental.ce.managers.Files;
 import gg.steve.elemental.ce.nbt.NBTItem;
 import gg.steve.elemental.ce.utils.*;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EnchantManager {
     private static Map<String, Enchant> enchants;
+    private static List<Material> enchantableItems;
 
     public static void loadEnchants() {
         enchants = new HashMap<>();
@@ -19,6 +24,10 @@ public class EnchantManager {
             YamlFileUtil file = new YamlFileUtil("enchants" + File.separator + enchant + ".yml", ElementalEnchants.get());
             enchants.put(enchant, new Enchant(enchant, file));
             LogUtil.info("Successfully loaded enchantment: " + enchant + ", into the plugins internal map.");
+        }
+        enchantableItems = new ArrayList<>();
+        for (String material : Files.CONFIG.get().getStringList("enchantable-items")) {
+            enchantableItems.add(Material.valueOf(material.toUpperCase()));
         }
     }
 
@@ -71,5 +80,10 @@ public class EnchantManager {
         }
         nbtItem.getItem().setItemMeta(builderUtil.getItemMeta());
         player.setItemInHand(nbtItem.getItem());
+        PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, enchantLevel);
+    }
+
+    public static boolean isEnchantable(ItemStack item) {
+        return enchantableItems.contains(item.getType());
     }
 }
