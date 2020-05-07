@@ -3,6 +3,7 @@ package gg.steve.elemental.ce.core;
 import gg.steve.elemental.ce.data.EnchantData;
 import gg.steve.elemental.ce.data.types.CommandEnchantData;
 import gg.steve.elemental.ce.data.types.PotionEnchantData;
+import gg.steve.elemental.ce.data.types.VanillaEnchantData;
 import gg.steve.elemental.ce.utils.YamlFileUtil;
 import gg.steve.elemental.tokens.core.TokenType;
 import org.bukkit.configuration.ConfigurationSection;
@@ -34,6 +35,8 @@ public class Enchant {
             case "command":
                 this.data = new CommandEnchantData(section);
                 break;
+            case "vanilla":
+                this.data = new VanillaEnchantData(section);
         }
     }
 
@@ -47,6 +50,10 @@ public class Enchant {
 
     public void onMine(BlockBreakEvent event, int enchantLevel) {
         this.data.onMine(event, enchantLevel);
+    }
+
+    public void onTokenDrop(Player player, int enchantLevel) {
+        this.data.onTokenDrop(player, enchantLevel);
     }
 
     public String getName() {

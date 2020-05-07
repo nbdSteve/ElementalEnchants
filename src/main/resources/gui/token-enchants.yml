@@ -50,6 +50,70 @@ size: 27
   item-flags:
     - hide_attributes
 4:
+  slot: 3
+  action: merchant
+  name: '&e&lMERCHANT'
+  item: emerald
+  data: 0
+  lore:
+    - ''
+    - '&7&oChance to sell your backpack for double price.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+5:
+  slot: 4
+  action: efficiency
+  name: '&e&lEFFICIENCY'
+  item: diamond_pickaxe
+  data: 0
+  lore:
+    - ''
+    - '&7&oIncrease dig speed.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+6:
+  slot: 5
+  action: fortune
+  name: '&e&lFORTUNE'
+  item: gold_block
+  data: 0
+  lore:
+    - ''
+    - '&7&oIncrease drops from ALL blocks.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+7:
+  slot: 6
+  action: tokenator
+  name: '&e&lTOKENATOR'
+  item: double_plant
+  data: 0
+  lore:
+    - ''
+    - '&7&oChance to double tokens when they drop while mining.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+27:
   slot: 26
   action: close
   name: '&c&lExit'

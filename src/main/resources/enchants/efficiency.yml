@@ -1,0 +1,11 @@
+max-level: 100
+
+upgrade:
+  type: token
+  price: 5
+
+lore: 'debug'
+
+data:
+  type: vanilla
+  enchantment: dig_speed

@@ -1,0 +1,11 @@
+max-level: 1000
+
+upgrade:
+  type: token
+  price: 10
+
+lore: 'debug'
+
+data:
+  type: vanilla
+  enchantment: loot_bonus_blocks

@@ -13,4 +13,4 @@ data:
   base-amount: 50 # base amount of blocks sold
   amount-multiplier: 0.05 # percentage of blocks added per level
   commands:
-    - pack sell {player} all {amount}
+    - pack sell {player} all {amount} 1

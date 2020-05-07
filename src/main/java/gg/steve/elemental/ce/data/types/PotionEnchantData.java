@@ -5,6 +5,7 @@ import gg.steve.elemental.ce.data.EnchantData;
 import gg.steve.elemental.ce.data.EnchantDataType;
 import gg.steve.elemental.ce.utils.LogUtil;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.potion.PotionEffect;
@@ -43,6 +44,16 @@ public class PotionEnchantData implements EnchantData {
     @Override
     public void onMine(BlockBreakEvent event, int enchantLevel) {
 
+    }
+
+    @Override
+    public void onTokenDrop(Player player, int enchantLevel) {
+
+    }
+
+    @Override
+    public Enchantment getVanillaEnchantment() {
+        return null;
     }
 
     /**

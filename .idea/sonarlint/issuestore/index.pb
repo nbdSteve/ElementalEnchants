@@ -69,3 +69,5 @@ t
 Dsrc/main/java/gg/steve/elemental/ce/listener/BlockBreakListener.java,2\c\2c09ae0a49c6d928277ce3256b866833ceefddfa
 v
 Fsrc/main/java/gg/steve/elemental/ce/data/types/CommandEnchantData.java,c\3\c3f944f24094b2e5678ed1f09e067fbccf86d98e
+v
+Fsrc/main/java/gg/steve/elemental/ce/data/types/VanillaEnchantData.java,8\3\832eb7229c2a27e64e7d464ef4001cd1d7cec9c7

@@ -38,6 +38,9 @@ public class PlayerEnchantManager implements Listener {
                     PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
                 }
             }
+            if (!item.getItem().getEnchantments().isEmpty()) {
+
+            }
         }
     }
 

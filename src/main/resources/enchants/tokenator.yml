@@ -1,0 +1,14 @@
+max-level: 250
+
+upgrade:
+  type: token
+  price: 50
+
+lore: '&eTokenator {level}'
+
+data:
+  type: command
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.1 # percentage added per level
+  commands:
+    - eta add {player} token 2 # if proced will give 2 tokens

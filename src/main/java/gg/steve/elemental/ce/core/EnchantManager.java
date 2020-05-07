@@ -5,8 +5,10 @@ import gg.steve.elemental.ce.managers.Files;
 import gg.steve.elemental.ce.nbt.NBTItem;
 import gg.steve.elemental.ce.utils.*;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -41,6 +43,14 @@ public class EnchantManager {
 
     public static Enchant getEnchant(String name) {
         return enchants.get(name);
+    }
+
+    public static Enchant getVanillaEnchant(Enchantment enchantment) {
+        for (Enchant enchant : enchants.values()) {
+            if (enchant.getData().getVanillaEnchantment() == null) continue;
+            if (enchant.getData().getVanillaEnchantment().equals(enchantment)) return enchant;
+        }
+        return null;
     }
 
     public static void applyEnchant(Player player, NBTItem nbtItem, Enchant enchant, int enchantLevel) {
@@ -79,6 +89,14 @@ public class EnchantManager {
             builderUtil.addLoreLine(enchant.getLore().replace("{level}", String.valueOf(enchantLevel)));
         }
         nbtItem.getItem().setItemMeta(builderUtil.getItemMeta());
+        player.setItemInHand(nbtItem.getItem());
+        PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, enchantLevel);
+    }
+
+    public static void applyVanilla(Player player, NBTItem nbtItem, Enchant enchant, int enchantLevel) {
+        ItemMeta meta = nbtItem.getItem().getItemMeta();
+        meta.addEnchant(enchant.getData().getVanillaEnchantment(), enchantLevel, true);
+        nbtItem.getItem().setItemMeta(meta);
         player.setItemInHand(nbtItem.getItem());
         PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, enchantLevel);
     }

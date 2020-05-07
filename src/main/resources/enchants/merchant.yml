@@ -1,0 +1,16 @@
+max-level: 500
+
+upgrade:
+  type: token
+  price: 30
+
+lore: '&eMerchant {level}'
+
+data:
+  type: command
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.5 # percentage added per level
+  base-amount: 50 # base amount of blocks sold
+  amount-multiplier: 0.05 # percentage of blocks added per level
+  commands:
+    - pack sell {player} all {amount} 2

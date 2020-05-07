@@ -5,7 +5,6 @@ import gg.steve.elemental.ce.core.EnchantManager;
 import gg.steve.elemental.ce.core.EnchantPlayer;
 import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.api.TokensApi;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 

@@ -71,7 +71,11 @@ public class TokenEnchantsGui extends AbstractGui {
                 tokenPlayer.removeTokens(enchant.getUpgradeType(), enchant.getUpgradePrice());
             }
         }
-        EnchantManager.applyEnchant(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + 1);
+        if (enchant.getData().getVanillaEnchantment() != null) {
+            EnchantManager.applyVanilla(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + 1);
+        } else {
+            EnchantManager.applyEnchant(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + 1);
+        }
         this.ePlayer.openTokenEnchantsGui();
         MessageType.UPGRADE_SUCCESS.message(this.ePlayer.getPlayer(), enchant.getName(), ElementalTokens.getNumberFormat().format(this.ePlayer.getEnchantLevel(enchant)), ElementalTokens.getNumberFormat().format(enchant.getMaxLevel()));
     }

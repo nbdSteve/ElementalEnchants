@@ -5,8 +5,8 @@ public enum EnchantDataType {
     MINER_PASS_LUCK,
     TOKEN,
     POTION,
-    MERCHANT,
     EXCAVATOR,
     LUCK,
-    COMMAND;
+    COMMAND,
+    VANILLA;
 }

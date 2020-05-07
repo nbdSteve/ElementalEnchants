@@ -34,4 +34,8 @@ public enum Files {
     public static void reload() {
         FileManager.reload();
     }
+
+    public static boolean doTokenDrop() {
+        return Math.random() * 100 < CONFIG.get().getDouble("token-mine-chance");
+    }
 }

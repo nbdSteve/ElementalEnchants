@@ -8,6 +8,7 @@ public class MineListener implements Listener {
 
     @EventHandler
     public void playerMine(BlockBreakEvent event) {
+        if (event.isCancelled()) return;
 
     }
 }

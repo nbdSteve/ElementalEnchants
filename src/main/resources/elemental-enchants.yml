@@ -5,6 +5,12 @@ loaded-enchants:
   - key-extractor
   - backpack-buster
   - booster-finder
+  - merchant
+  - efficiency
+  - fortune
+  - tokenator
+
+token-mine-chance: 10
 
 enchantable-items:
   - diamond_pickaxe
