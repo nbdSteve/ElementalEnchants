@@ -6,12 +6,12 @@ import org.bukkit.entity.Player;
 
 public class SoundUtil {
 
-    public static void playSound(ConfigurationSection section, String entry, Player player) {
-        if (section.getBoolean(entry + ".sound.enabled")) {
+    public static void playSound(ConfigurationSection section, Player player) {
+        if (section.getBoolean("sound.enabled")) {
             player.playSound(player.getLocation(),
-                    Sound.valueOf(section.getString(entry + ".sound.type").toUpperCase()),
-                    section.getInt(entry + ".sound.volume"),
-                    section.getInt(entry + ".sound.pitch"));
+                    Sound.valueOf(section.getString("sound.type").toUpperCase()),
+                    section.getInt("sound.volume"),
+                    section.getInt("sound.pitch"));
         }
     }
 }

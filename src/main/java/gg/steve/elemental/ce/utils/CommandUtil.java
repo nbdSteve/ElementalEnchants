@@ -7,9 +7,9 @@ import java.util.List;
 
 public class CommandUtil {
 
-    public static void execute(List<String> commands, Player player, int amount) {
+    public static void execute(List<String> commands, Player player) {
         for (String command : commands) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{player}", player.getName()).replace("{amount}", String.valueOf(amount)));
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{player}", player.getName()));
         }
     }
 }

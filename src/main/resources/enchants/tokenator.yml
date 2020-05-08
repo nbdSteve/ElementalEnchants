@@ -7,8 +7,14 @@ upgrade:
 lore: '&eTokenator {level}'
 
 data:
-  type: command
+  type: tokenator
   base-rate: 0.00 # starting proc chance
   multiplier: 0.1 # percentage added per level
-  commands:
-    - eta add {player} token 2 # if proced will give 2 tokens
+  message:
+    enabled: false # message handled in tokens/messages.yml
+    text:
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

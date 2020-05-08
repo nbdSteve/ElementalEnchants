@@ -4,6 +4,7 @@ import gg.steve.elemental.ce.core.Enchant;
 import gg.steve.elemental.ce.core.EnchantManager;
 import gg.steve.elemental.ce.core.PlayerEnchantManager;
 import gg.steve.elemental.ce.nbt.NBTItem;
+import gg.steve.elemental.ce.utils.EnchantProcUtil;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -142,6 +143,7 @@ public class HoldPickaxeListener implements Listener {
             for (String enchantName : enchants.keySet()) {
                 Enchant enchant = EnchantManager.getEnchant(enchantName);
                 PlayerEnchantManager.removeEnchantFromPlayer(player.getUniqueId(), enchant);
+                EnchantProcUtil.doRemove(enchant.getConfig().getConfigurationSection("data"), player);
             }
             for (Enchantment enchantment : item.getItem().getEnchantments().keySet()) {
                 Enchant enchant;

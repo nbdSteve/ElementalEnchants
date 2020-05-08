@@ -1,9 +1,9 @@
 
-V
-java:S2864z"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8¶ñÂı.
-Z
-java:S18746"=Remove this use of "PlayerPickupItemEvent"; it is deprecated.(Éö¯º8ÅÁ˜.
-W
-java:S1874G"5Remove this use of "getItemInHand"; it is deprecated.(ƒï©êûÿÿÿÿ8©¼™À.
 R
-java:S1874F"5Remove this use of "getItemInHand"; it is deprecated.(×İå8Üò•À.
+java:S1874G"5Remove this use of "getItemInHand"; it is deprecated.(×İå8Üò•À.
+V
+java:S2864{"4Iterate over the "entrySet" instead of the "keySet".(†ï£’úÿÿÿÿ8¶ñÂı.
+W
+java:S1874H"5Remove this use of "getItemInHand"; it is deprecated.(ƒï©êûÿÿÿÿ8©¼™À.
+Z
+java:S18747"=Remove this use of "PlayerPickupItemEvent"; it is deprecated.(Éö¯º8ÅÁ˜.

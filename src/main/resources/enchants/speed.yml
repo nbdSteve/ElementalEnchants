@@ -10,3 +10,14 @@ data:
   type: potion
   effect: speed
   duration: 999999
+  message:
+    enabled: true
+    text:
+      - '&6[+] &eSpeed'
+    remove:
+      - '&6[-] &eSpeed'
+  sound:
+    enabled: false
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

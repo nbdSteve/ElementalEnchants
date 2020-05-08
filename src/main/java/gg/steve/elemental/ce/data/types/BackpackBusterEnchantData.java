@@ -1,34 +1,35 @@
 package gg.steve.elemental.ce.data.types;
 
+import gg.steve.elemental.bps.api.BackpacksApi;
 import gg.steve.elemental.bps.event.PreBackpackSaleEvent;
+import gg.steve.elemental.bps.event.SellMethodType;
 import gg.steve.elemental.ce.data.EnchantData;
 import gg.steve.elemental.ce.data.EnchantDataType;
-import gg.steve.elemental.ce.utils.CommandUtil;
 import gg.steve.elemental.ce.utils.EnchantProcUtil;
+import gg.steve.elemental.ce.utils.LogUtil;
 import gg.steve.elemental.tokens.event.PreTokenAddEvent;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 
-import java.util.List;
-
-public class CommandEnchantData implements EnchantData {
+public class BackpackBusterEnchantData implements EnchantData {
     private ConfigurationSection section;
-    private List<String> commands;
-    private double baseRate, multiplier;
+    private String group;
+    private double baseRate, multiplier, baseAmount, amountMultiplier;
 
-    public CommandEnchantData(ConfigurationSection section) {
+    public BackpackBusterEnchantData(ConfigurationSection section) {
         this.section = section;
-        this.commands = section.getStringList("commands");
+        this.group = section.getString("sell-group");
         this.baseRate = section.getDouble("base-rate");
         this.multiplier = section.getDouble("multiplier");
+        this.baseAmount = section.getDouble("base-amount");
+        this.amountMultiplier = section.getDouble("amount-multiplier");
     }
 
     @Override
     public EnchantDataType getType() {
-        return EnchantDataType.COMMAND;
+        return EnchantDataType.BACKPACK_BUSTER;
     }
 
     @Override
@@ -44,7 +45,8 @@ public class CommandEnchantData implements EnchantData {
     @Override
     public void onMine(BlockBreakEvent event, int enchantLevel) {
         if (Math.random() * 100 > (this.baseRate + (this.multiplier * enchantLevel))) return;
-        CommandUtil.execute(this.commands, event.getPlayer());
+        int amount = (int) Math.floor(this.baseAmount + ((this.amountMultiplier * this.baseAmount) * enchantLevel));
+        BackpacksApi.sellBackpack(event.getPlayer(), this.group, amount, SellMethodType.BUSTER);
         EnchantProcUtil.doProc(section, event.getPlayer());
     }
 

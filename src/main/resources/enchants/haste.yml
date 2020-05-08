@@ -10,3 +10,14 @@ data:
   type: potion
   effect: fast_digging
   duration: 999999
+  message:
+    enabled: true
+    text:
+      - '&6[+] &eHaste'
+    remove:
+      - '&6[-] &eHaste'
+  sound:
+    enabled: false
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

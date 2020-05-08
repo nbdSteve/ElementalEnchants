@@ -10,3 +10,14 @@ data:
   type: potion
   effect: night_vision
   duration: 999999
+  message:
+    enabled: true
+    text:
+      - '&6[+] &eNight Vision'
+    remove:
+      - '&6[-] &eNight Vision'
+  sound:
+    enabled: false
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

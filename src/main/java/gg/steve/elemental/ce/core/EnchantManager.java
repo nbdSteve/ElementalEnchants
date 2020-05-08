@@ -3,7 +3,10 @@ package gg.steve.elemental.ce.core;
 import gg.steve.elemental.ce.ElementalEnchants;
 import gg.steve.elemental.ce.managers.Files;
 import gg.steve.elemental.ce.nbt.NBTItem;
-import gg.steve.elemental.ce.utils.*;
+import gg.steve.elemental.ce.utils.ColorUtil;
+import gg.steve.elemental.ce.utils.ItemBuilderUtil;
+import gg.steve.elemental.ce.utils.LogUtil;
+import gg.steve.elemental.ce.utils.YamlFileUtil;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -71,23 +74,13 @@ public class EnchantManager {
         if (upgrade) {
             if (!builderUtil.getLore().isEmpty()) {
                 for (int i = 0; i < builderUtil.getLore().size(); i++) {
-                    if (currentLevel < 11) {
-                        if (builderUtil.getLore().get(i).equalsIgnoreCase(ColorUtil.colorize(enchant.getLore().replace("{level}", RomanNumeralUtil.integerToRomanNumeral(currentLevel))))) {
-                            builderUtil.getLore().remove(i);
-                        }
-                    } else {
-                        if (builderUtil.getLore().get(i).equalsIgnoreCase(ColorUtil.colorize(enchant.getLore().replace("{level}", String.valueOf(currentLevel))))) {
-                            builderUtil.getLore().remove(i);
-                        }
+                    if (builderUtil.getLore().get(i).equalsIgnoreCase(ColorUtil.colorize(enchant.getLore().replace("{level}", String.valueOf(currentLevel))))) {
+                        builderUtil.getLore().remove(i);
                     }
                 }
             }
         }
-        if (enchantLevel < 11) {
-            builderUtil.addLoreLine(enchant.getLore().replace("{level}", RomanNumeralUtil.integerToRomanNumeral(enchantLevel)));
-        } else {
-            builderUtil.addLoreLine(enchant.getLore().replace("{level}", String.valueOf(enchantLevel)));
-        }
+        builderUtil.addLoreLine(enchant.getLore().replace("{level}", String.valueOf(enchantLevel)));
         nbtItem.getItem().setItemMeta(builderUtil.getItemMeta());
         player.setItemInHand(nbtItem.getItem());
         PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, enchantLevel);

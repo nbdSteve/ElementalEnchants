@@ -1,7 +1,9 @@
 package gg.steve.elemental.ce.data.types;
 
+import gg.steve.elemental.bps.event.PreBackpackSaleEvent;
 import gg.steve.elemental.ce.data.EnchantData;
 import gg.steve.elemental.ce.data.EnchantDataType;
+import gg.steve.elemental.tokens.event.PreTokenAddEvent;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -35,7 +37,12 @@ public class VanillaEnchantData implements EnchantData {
     }
 
     @Override
-    public void onTokenDrop(Player player, int enchantLevel) {
+    public void onBackpackSell(PreBackpackSaleEvent event, int enchantLevel) {
+
+    }
+
+    @Override
+    public void onTokenAdd(PreTokenAddEvent event, int enchantLevel) {
 
     }
 

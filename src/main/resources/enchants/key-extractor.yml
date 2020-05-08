@@ -11,4 +11,12 @@ data:
   base-rate: 0.05 # starting proc chance
   multiplier: 0.05 # percentage added per level
   commands:
-    - msg {player} key extractor
+  message:
+    enabled: true
+    text:
+      - '&5&lKeys &f>> &7You have found a key.'
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

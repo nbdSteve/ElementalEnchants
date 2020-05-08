@@ -1,11 +1,11 @@
 package gg.steve.elemental.ce.core;
 
+import gg.steve.elemental.bps.event.PreBackpackSaleEvent;
 import gg.steve.elemental.ce.data.EnchantData;
-import gg.steve.elemental.ce.data.types.CommandEnchantData;
-import gg.steve.elemental.ce.data.types.PotionEnchantData;
-import gg.steve.elemental.ce.data.types.VanillaEnchantData;
+import gg.steve.elemental.ce.data.types.*;
 import gg.steve.elemental.ce.utils.YamlFileUtil;
 import gg.steve.elemental.tokens.core.TokenType;
+import gg.steve.elemental.tokens.event.PreTokenAddEvent;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -37,6 +37,16 @@ public class Enchant {
                 break;
             case "vanilla":
                 this.data = new VanillaEnchantData(section);
+                break;
+            case "buster":
+                this.data = new BackpackBusterEnchantData(section);
+                break;
+            case "merchant":
+                this.data = new MerchantEnchantData(section);
+                break;
+            case "tokenator":
+                this.data = new TokenatorEnchantData(section);
+                break;
         }
     }
 
@@ -52,8 +62,12 @@ public class Enchant {
         this.data.onMine(event, enchantLevel);
     }
 
-    public void onTokenDrop(Player player, int enchantLevel) {
-        this.data.onTokenDrop(player, enchantLevel);
+    public void onTokenAdd(PreTokenAddEvent event, int enchantLevel) {
+        this.data.onTokenAdd(event, enchantLevel);
+    }
+
+    public void onBackpackSell(PreBackpackSaleEvent event, int enchantLevel) {
+        this.data.onBackpackSell(event, enchantLevel);
     }
 
     public String getName() {

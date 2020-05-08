@@ -10,7 +10,7 @@ loaded-enchants:
   - fortune
   - tokenator
 
-token-mine-chance: 10
+token-mine-chance: 1 # 1%
 
 enchantable-items:
   - diamond_pickaxe

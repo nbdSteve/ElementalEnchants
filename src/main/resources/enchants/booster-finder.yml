@@ -11,4 +11,12 @@ data:
   base-rate: 0.05 # starting proc chance
   multiplier: 0.05 # percentage added per level
   commands:
-    - msg {player} booster
+  message:
+    enabled: true
+    text:
+      - '&5&lBoosters &f>> &7You have found a booster.'
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

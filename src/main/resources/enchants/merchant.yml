@@ -7,10 +7,14 @@ upgrade:
 lore: '&eMerchant {level}'
 
 data:
-  type: command
+  type: merchant
   base-rate: 0.00 # starting proc chance
   multiplier: 0.5 # percentage added per level
-  base-amount: 50 # base amount of blocks sold
-  amount-multiplier: 0.05 # percentage of blocks added per level
-  commands:
-    - pack sell {player} all {amount} 2
+  message:
+    enabled: false # sell message is handled in backpacks/messages.yml
+    text:
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1
