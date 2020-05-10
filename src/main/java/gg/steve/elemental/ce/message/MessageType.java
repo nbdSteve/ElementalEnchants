@@ -2,8 +2,8 @@ package gg.steve.elemental.ce.message;
 
 import gg.steve.elemental.ce.managers.Files;
 import gg.steve.elemental.ce.utils.ColorUtil;
+import gg.steve.elemental.tokens.ElementalTokens;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
@@ -12,11 +12,12 @@ import java.util.List;
 public enum MessageType {
     RELOAD("reload"),
     HELP("help"),
-    GIVE_GIVER("give-piece-giver", "{player}", "{piece}", "{set-name}", "{amount}"),
-    GIVE_RECEIVER("give-piece-receiver", "{piece}", "{set-name}", "{amount}"),
+    ADD_ENCHANT_ADDER("add-enchant-adder", "{player}", "{enchant}", "{level}"),
+    ADD_ENCHANT_RECEIVER("add-enchant-receiver", "{enchant}", "{level}"),
     UNENCHANTABLE_ITEM("unenchantable-item"),
     ENCHANT_MAX_LEVEL("enchant-max-level"),
     UPGRADE_SUCCESS("upgrade-success", "{enchant}", "{current-level}", "{max-level}"),
+    LUCKY_BLOCK_DROP("lucky-block-drop", "{percent}"),
     INSUFFICIENT_TOKENS("insufficient-tokens", "{token-type}");
 
     private String path;
@@ -57,21 +58,9 @@ public enum MessageType {
         }
     }
 
-    public static void doProcMessage(ConfigurationSection section, String entry, Player receiver) {
-        if (section.getBoolean(entry + ".message.enabled")) {
-            doMessage(receiver, section.getStringList(entry + ".message.text"));
-        }
-    }
-
-    public static void doAttackedMessage(ConfigurationSection section, String entry, Player receiver) {
-        if (section.getBoolean(entry + ".message.enabled")) {
-            doMessage(receiver, section.getStringList(entry + ".message.attacked"));
-        }
-    }
-
-    public static void doAttackerMessage(ConfigurationSection section, String entry, Player receiver) {
-        if (section.getBoolean(entry + ".message.enabled")) {
-            doMessage(receiver, section.getStringList(entry + ".message.attacker"));
+    public static void doMessage(Player receiver, List<String> lines, int amount) {
+        for (String line : lines) {
+            receiver.sendMessage(ColorUtil.colorize(line).replace("{amount}", ElementalTokens.getNumberFormat().format(amount)));
         }
     }
 }

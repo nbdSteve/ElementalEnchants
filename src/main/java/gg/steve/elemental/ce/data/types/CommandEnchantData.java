@@ -3,7 +3,6 @@ package gg.steve.elemental.ce.data.types;
 import gg.steve.elemental.bps.event.PreBackpackSaleEvent;
 import gg.steve.elemental.ce.data.EnchantData;
 import gg.steve.elemental.ce.data.EnchantDataType;
-import gg.steve.elemental.ce.utils.CommandUtil;
 import gg.steve.elemental.ce.utils.EnchantProcUtil;
 import gg.steve.elemental.tokens.event.PreTokenAddEvent;
 import org.bukkit.Bukkit;
@@ -13,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import java.util.List;
+import java.util.Random;
 
 public class CommandEnchantData implements EnchantData {
     private ConfigurationSection section;
@@ -44,7 +44,11 @@ public class CommandEnchantData implements EnchantData {
     @Override
     public void onMine(BlockBreakEvent event, int enchantLevel) {
         if (Math.random() * 100 > (this.baseRate + (this.multiplier * enchantLevel))) return;
-        CommandUtil.execute(this.commands, event.getPlayer());
+        int drop = 0;
+        if (this.commands.size() > 1) {
+            drop = new Random().nextInt(this.commands.size() - 1);
+        }
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), this.commands.get(drop).replace("{player}", event.getPlayer().getName()));
         EnchantProcUtil.doProc(section, event.getPlayer());
     }
 

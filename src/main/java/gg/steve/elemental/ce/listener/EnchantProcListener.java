@@ -2,9 +2,11 @@ package gg.steve.elemental.ce.listener;
 
 import gg.steve.elemental.bps.event.PreBackpackSaleEvent;
 import gg.steve.elemental.ce.core.Enchant;
+import gg.steve.elemental.ce.core.EnchantManager;
 import gg.steve.elemental.ce.core.EnchantPlayer;
 import gg.steve.elemental.ce.core.PlayerEnchantManager;
 import gg.steve.elemental.ce.managers.Files;
+import gg.steve.elemental.ce.nbt.NBTItem;
 import gg.steve.elemental.tokens.api.TokensApi;
 import gg.steve.elemental.tokens.core.TokenType;
 import gg.steve.elemental.tokens.event.AddMethodType;
@@ -14,6 +16,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.player.PlayerItemDamageEvent;
 
 public class EnchantProcListener implements Listener {
 
@@ -48,5 +51,11 @@ public class EnchantProcListener implements Listener {
         for (Enchant enchant : player.getActiveEnchants().keySet()) {
             enchant.onTokenAdd(event, player.getEnchantLevel(enchant));
         }
+    }
+
+    @EventHandler
+    public void itemDamage(PlayerItemDamageEvent event) {
+        if (event.isCancelled()) return;
+        if (EnchantManager.isEnchantable(event.getItem())) event.setCancelled(true);
     }
 }

@@ -1,0 +1,23 @@
+max-level: 1000
+
+upgrade:
+  type: token
+  price: 20
+
+lore: '&eExplosive {level}'
+
+data:
+  type: explosive
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.05 # percentage added per level
+  base-power: 1 # base power of the explosion
+  power-multiplier: 0.02 # explosion power added per level
+  message:
+    enabled: true # sell message is handled in backpacks/messages.yml
+    text:
+      - '&5&lEnchants &f>> &6EXPLOSIVE &7just proced and blew up some blocks around you.'
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

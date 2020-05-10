@@ -1,0 +1,22 @@
+max-level: 1000
+
+upgrade:
+  type: token
+  price: 20
+
+lore: '&eExcavator {level}'
+
+data:
+  type: regional
+  clearance-type: layer
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.005 # percentage added per level
+  message:
+    enabled: true
+    text:
+      - '&5&lEnchants &f>> &6EXCAVATOR &7just proced and mined the layer of the mine for you &7&o((&e&o{amount} &7&oblocks)).'
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

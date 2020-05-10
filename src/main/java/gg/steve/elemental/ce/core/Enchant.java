@@ -47,6 +47,15 @@ public class Enchant {
             case "tokenator":
                 this.data = new TokenatorEnchantData(section);
                 break;
+            case "luck":
+                this.data = new LuckEnchantData(section);
+                break;
+            case "regional":
+                this.data = new RegionalEnchantData(section);
+                break;
+            case "explosive":
+                this.data = new ExplosiveEnchantData(section);
+                break;
         }
     }
 

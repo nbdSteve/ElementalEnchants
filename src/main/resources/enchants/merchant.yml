@@ -9,7 +9,7 @@ lore: '&eMerchant {level}'
 data:
   type: merchant
   base-rate: 0.00 # starting proc chance
-  multiplier: 0.5 # percentage added per level
+  multiplier: 0.025 # percentage added per level
   message:
     enabled: false # sell message is handled in backpacks/messages.yml
     text:

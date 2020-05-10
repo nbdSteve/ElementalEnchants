@@ -1,0 +1,26 @@
+only-players-accessible:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7Only players can use that command, please go in-game and try again.'
+
+insufficient-permission:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7You do not have permission (&6{node}&7) to use that.'
+
+target-not-online:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7The target player must be online in order to complete that action.'
+
+invalid-number-of-arguments:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7The number of arguments you entered is incorrect.'
+
+invalid-command:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7The command you entered does not exist.'
+
+invalid-level:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7Invalid enchantment level, please make sure you enter an integer larger than 0.'
+
+exceed-max-level:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7Unable to complete action, that level would exceed that enchants maximum level.'
+
+target-unenchantable-item:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7Unable to complete action, the item &6{player} &7is holding is not enchantable.'
+
+invalid-enchant:
+  - '&5&lEnchants &4(&c&lERROR&4) &f>> &7That enchant does not exist.'

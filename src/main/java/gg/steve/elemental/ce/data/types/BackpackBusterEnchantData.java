@@ -6,7 +6,6 @@ import gg.steve.elemental.bps.event.SellMethodType;
 import gg.steve.elemental.ce.data.EnchantData;
 import gg.steve.elemental.ce.data.EnchantDataType;
 import gg.steve.elemental.ce.utils.EnchantProcUtil;
-import gg.steve.elemental.ce.utils.LogUtil;
 import gg.steve.elemental.tokens.event.PreTokenAddEvent;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;

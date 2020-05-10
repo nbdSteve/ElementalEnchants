@@ -1,0 +1,7 @@
+command:
+  gui:
+    token: enchants.gui.token
+    prestige: enchants.gui.prestige
+  reload: enchants.reload
+  help: enchants.help
+  add-enchant: enchants.add

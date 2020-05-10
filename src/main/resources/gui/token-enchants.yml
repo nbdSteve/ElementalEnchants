@@ -1,11 +1,11 @@
 name: '&6&lToken Enchantments'
 type: none
-size: 27
+size: 45
 1:
-  slot: 0
+  slot: 10
   action: haste
   name: '&e&lHASTE'
-  item: beacon
+  material: beacon
   data: 0
   lore:
     - ''
@@ -18,10 +18,10 @@ size: 27
   item-flags:
     - hide_attributes
 2:
-  slot: 1
+  slot: 12
   action: speed
   name: '&e&lSPEED'
-  item: feather
+  material: feather
   data: 0
   lore:
     - ''
@@ -34,10 +34,10 @@ size: 27
   item-flags:
     - hide_attributes
 3:
-  slot: 2
+  slot: 14
   action: night-vision
   name: '&e&lNIGHT VISION'
-  item: glowstone
+  material: glowstone
   data: 0
   lore:
     - ''
@@ -50,10 +50,10 @@ size: 27
   item-flags:
     - hide_attributes
 4:
-  slot: 3
+  slot: 16
   action: merchant
   name: '&e&lMERCHANT'
-  item: emerald
+  material: emerald
   data: 0
   lore:
     - ''
@@ -66,10 +66,10 @@ size: 27
   item-flags:
     - hide_attributes
 5:
-  slot: 4
+  slot: 20
   action: efficiency
   name: '&e&lEFFICIENCY'
-  item: diamond_pickaxe
+  material: diamond_pickaxe
   data: 0
   lore:
     - ''
@@ -82,10 +82,10 @@ size: 27
   item-flags:
     - hide_attributes
 6:
-  slot: 5
+  slot: 22
   action: fortune
   name: '&e&lFORTUNE'
-  item: gold_block
+  material: gold_block
   data: 0
   lore:
     - ''
@@ -98,10 +98,10 @@ size: 27
   item-flags:
     - hide_attributes
 7:
-  slot: 6
+  slot: 24
   action: tokenator
   name: '&e&lTOKENATOR'
-  item: double_plant
+  material: double_plant
   data: 0
   lore:
     - ''
@@ -113,11 +113,88 @@ size: 27
   enchantments:
   item-flags:
     - hide_attributes
+8:
+  slot: 28
+  action: luck
+  name: '&e&lLUCK'
+  material: sponge
+  data: 0
+  lore:
+    - ''
+    - '&7&oChance to find lucky blocks while mining.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+9:
+  slot: 30
+  action: excavator
+  name: '&e&lEXCAVATOR'
+  material: redstone_torch_on
+  data: 0
+  lore:
+    - ''
+    - '&7&oChance to clear 1 layer of the mine your are in.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+10:
+  slot: 32
+  action: miners-luck
+  name: '&e&lMINERS LUCK'
+  material: exp_bottle
+  data: 0
+  lore:
+    - ''
+    - '&7&oIncreased miner pass experience drops.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+11:
+  slot: 34
+  action: explosive
+  name: '&e&lEXPLOSIVE'
+  material: tnt
+  data: 0
+  lore:
+    - ''
+    - '&7&oIncreased chance to explode blocks around you.'
+    - ''
+    - '&5Current Level&f| &d&l{current-level}'
+    - '&5Max Level&f| &d&l{max-level}'
+    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+  enchantments:
+  item-flags:
+    - hide_attributes
+26:
+  slot: 43
+  action: back
+  name: '&c&lBack'
+  material: hdb-7789
+  data: 0
+  lore:
+    - '&7'
+    - '&7&o((left click to return to the tshop gui))'
+    - '&7'
+  enchantments:
+  item-flags:
+    - hide_attributes
 27:
-  slot: 26
+  slot: 44
   action: close
-  name: '&c&lExit'
-  item: barrier
+  name: '&c&lClose'
+  material: hdb-187
   data: 0
   lore:
     - '&7'

@@ -1,8 +1,11 @@
 package gg.steve.elemental.ce.managers;
 
 import gg.steve.elemental.ce.ElementalEnchants;
-import gg.steve.elemental.ce.cmd.EceCmd;
+import gg.steve.elemental.ce.cmd.EeaCmd;
+import gg.steve.elemental.ce.cmd.PeCmd;
+import gg.steve.elemental.ce.cmd.TeCmd;
 import gg.steve.elemental.ce.core.PlayerEnchantManager;
+import gg.steve.elemental.ce.data.types.ExplosiveEnchantData;
 import gg.steve.elemental.ce.gui.GuiClickListener;
 import gg.steve.elemental.ce.listener.EnchantProcListener;
 import gg.steve.elemental.ce.listener.HoldPickaxeListener;
@@ -31,7 +34,9 @@ public class SetupManager {
     }
 
     public static void registerCommands(ElementalEnchants instance) {
-        instance.getCommand("ece").setExecutor(new EceCmd());
+        instance.getCommand("eea").setExecutor(new EeaCmd());
+        instance.getCommand("te").setExecutor(new TeCmd());
+        instance.getCommand("pe").setExecutor(new PeCmd());
     }
 
     /**
@@ -45,5 +50,6 @@ public class SetupManager {
         pm.registerEvents(new HoldPickaxeListener(), instance);
         pm.registerEvents(new GuiClickListener(), instance);
         pm.registerEvents(new EnchantProcListener(), instance);
+        pm.registerEvents(new ExplosiveEnchantData(), instance);
     }
 }

@@ -1,14 +1,13 @@
 package gg.steve.elemental.ce.data;
 
 public enum EnchantDataType {
-    EXPLOSIVE,
-    MINER_PASS_LUCK,
     TOKENATOR,
     POTION,
-    EXCAVATOR,
+    REGIONAL,
     LUCK,
     BACKPACK_BUSTER,
     MERCHANT,
     COMMAND,
-    VANILLA;
+    VANILLA,
+    EXPLOSIVE;
 }

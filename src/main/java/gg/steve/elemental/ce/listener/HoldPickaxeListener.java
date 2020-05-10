@@ -10,6 +10,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
@@ -115,6 +116,14 @@ public class HoldPickaxeListener implements Listener {
             current = new NBTItem(event.getCurrentItem());
             applyEnchants(current, player);
         }
+    }
+
+    @EventHandler
+    public void death(PlayerDeathEvent event) {
+        if (event.getKeepInventory()) return;
+        if (event.getEntity().getItemInHand() == null || event.getEntity().getItemInHand().getType().equals(Material.AIR)) return;
+        NBTItem item = new NBTItem(event.getEntity().getItemInHand());
+        removeEnchants(item, event.getEntity());
     }
 
     public void applyEnchants(NBTItem item, Player player) {

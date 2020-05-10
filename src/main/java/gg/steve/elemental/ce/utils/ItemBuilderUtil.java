@@ -94,9 +94,9 @@ public class ItemBuilderUtil {
         item.setItemMeta(itemMeta);
     }
 
-    public void addNBT(String name) {
+    public void addNBT() {
         nbtItem = new NBTItem(item);
-        nbtItem.setString("armor+.set", name);
+        nbtItem.setBoolean("enchants.gui.item", true);
     }
 
     public void setItemMeta(ItemMeta itemMeta) {

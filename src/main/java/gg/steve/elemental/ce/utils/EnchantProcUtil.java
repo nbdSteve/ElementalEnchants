@@ -13,6 +13,13 @@ public class EnchantProcUtil {
         SoundUtil.playSound(section, player);
     }
 
+    public static void doProc(ConfigurationSection section, Player player, int amount) {
+        if (section.getBoolean("message.enabled")) {
+            MessageType.doMessage(player, section.getStringList("message.text"), amount);
+        }
+        SoundUtil.playSound(section, player);
+    }
+
     public static void doRemove(ConfigurationSection section, Player player) {
         if (section.getBoolean("message.enabled")) {
             MessageType.doMessage(player, section.getStringList("message.remove"));

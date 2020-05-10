@@ -1,0 +1,22 @@
+max-level: 100
+
+upgrade:
+  type: token
+  price: 20
+
+lore: '&eMiners Luck {level}'
+
+data:
+  type: command
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.05 # percentage added per level
+  commands:
+    - mpa exp add {player} 500
+  message:
+    enabled: false
+    text:
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

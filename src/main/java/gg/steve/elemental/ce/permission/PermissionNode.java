@@ -4,10 +4,10 @@ import gg.steve.elemental.ce.managers.Files;
 import org.bukkit.command.CommandSender;
 
 public enum PermissionNode {
-    PURCHASE("purchase.node"),
-    GUI("command.gui"),
+    ADD_ENCHANT("command.add-enchant"),
+    PE_GUI("command.gui.prestige"),
+    TE_GUI("command.gui.token"),
     RELOAD("command.reload"),
-    GIVE("command.give"),
     HELP("command.help");
 
     private String path;

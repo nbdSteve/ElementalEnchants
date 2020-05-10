@@ -1,0 +1,20 @@
+max-level: 100
+
+upgrade:
+  type: token
+  price: 20
+
+lore: '&eLuck {level}'
+
+data:
+  type: luck
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.01 # percentage added per level
+  message:
+    enabled: false # lucky block message is handled in messages.yml
+    text:
+  sound:
+    enabled: true
+    type: 'villager_yes'
+    volume: 1
+    pitch: 1

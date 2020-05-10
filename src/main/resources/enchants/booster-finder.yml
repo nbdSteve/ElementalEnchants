@@ -8,13 +8,14 @@ lore: '&6Booster Finder {level}'
 
 data:
   type: command
-  base-rate: 0.05 # starting proc chance
-  multiplier: 0.05 # percentage added per level
-  commands:
+  base-rate: 0.00 # starting proc chance
+  multiplier: 0.009 # percentage added per level
+  commands: # will select a random command from the list
+    - booster give {player} 1 300
+    - booster give {player} 2 300
   message:
-    enabled: true
+    enabled: false
     text:
-      - '&5&lBoosters &f>> &7You have found a booster.'
   sound:
     enabled: true
     type: 'villager_yes'

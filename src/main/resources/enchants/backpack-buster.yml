@@ -11,8 +11,8 @@ data:
   sell-group: all
   base-rate: 0.00 # starting proc chance
   multiplier: 0.05 # percentage added per level
-  base-amount: 50 # base amount of blocks sold
-  amount-multiplier: 0.05 # percentage of blocks added per level
+  base-amount: 1000 # base amount of blocks sold
+  amount-multiplier: 0.5 # percentage of blocks added per level
   message:
     enabled: false # sell message is handled in backpacks/messages.yml
     text:

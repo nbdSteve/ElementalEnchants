@@ -9,7 +9,11 @@ import gg.steve.elemental.ce.utils.GuiItemUtil;
 import gg.steve.elemental.tokens.ElementalTokens;
 import gg.steve.elemental.tokens.api.TokensApi;
 import gg.steve.elemental.tokens.core.TokenPlayer;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class PrestigeEnchantsGui extends AbstractGui {
     private EnchantPlayer ePlayer;
@@ -23,6 +27,13 @@ public class PrestigeEnchantsGui extends AbstractGui {
     public PrestigeEnchantsGui(YamlConfiguration config, EnchantPlayer ePlayer) {
         super(config, config.getString("type"), config.getInt("size"));
         this.config = config;
+        for (int i = 0; i < config.getInt("size"); i++) {
+            if (i % 2 == 0) {
+                setItemInSlot(i, getFillerGlass((byte) 10), player -> {});
+            } else {
+                setItemInSlot(i, getFillerGlass((byte) 0), player -> {});
+            }
+        }
         refresh(ePlayer);
     }
 
@@ -40,6 +51,10 @@ public class PrestigeEnchantsGui extends AbstractGui {
                         break;
                     case "close":
                         player.closeInventory();
+                        break;
+                    case "back":
+                        player.closeInventory();
+                        ElementalTokens.openShopGui(player);
                         break;
                     default:
                         doEnchantmentUpgrade(EnchantManager.getEnchant(config.getString(entry + ".action")));
@@ -74,5 +89,14 @@ public class PrestigeEnchantsGui extends AbstractGui {
         EnchantManager.applyEnchant(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + 1);
         this.ePlayer.openPrestigeEnchantsGui();
         MessageType.UPGRADE_SUCCESS.message(this.ePlayer.getPlayer(), enchant.getName(), ElementalTokens.getNumberFormat().format(this.ePlayer.getEnchantLevel(enchant)), ElementalTokens.getNumberFormat().format(enchant.getMaxLevel()));
+    }
+
+    public ItemStack getFillerGlass(byte data) {
+        ItemStack item = new ItemStack(Material.valueOf("STAINED_GLASS_PANE"), 1, data);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName(" ");
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        item.setItemMeta(meta);
+        return item;
     }
 }

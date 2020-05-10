@@ -7,10 +7,28 @@ authors: [stevegoodhill]
 description: Private custom enchantment plugin for ElementalMC
 depend:
   - ElementalTokens
+  - WorldEdit
+  - WorldGuard
+softdepend:
+  - Backpacks
+  - PlaceholderAPI
+  - Featherboard
+  - HeadDatabase
 commands:
-  ece:
+  eea:
     usage: /<command>
-    description: Base command for elemental enchants.
+    description: Admin command for elemental enchants.
+  pe:
+    usage: /<commmand>
+    description: Opens the prestige enchantment gui
     aliases:
-      - enchanter
-      - ce
+      - prestigee
+      - prestigeenchanter
+      - pce
+  te:
+    usage: /<command>
+    description: Opens the token enchantment gui
+    aliases:
+      - tokene
+      - tokenenchanter
+      - tce

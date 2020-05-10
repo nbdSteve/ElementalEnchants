@@ -15,3 +15,12 @@ upgrade-success:
 
 insufficient-tokens:
   - '&5&lEnchants &f>> &7You do not have enough &6{token-type} &7tokens to purchase that upgrade.'
+
+lucky-block-drop:
+  - '&5&lEnchants &f>> &7You do not have mined a lucky block, what you found has a &6{percent}% &7drop rate.'
+
+add-enchant-adder:
+  - "&5&lEnchants &f>> &7Successfully enchanted &6{player}'s pickaxe with &6{enchant} &e&l{level}&7."
+
+add-enchant-receiver:
+  - '&5&lEnchants &f>> &7Your pickaxe has been enchanted with &6{enchant} &e&l{level}&7.'

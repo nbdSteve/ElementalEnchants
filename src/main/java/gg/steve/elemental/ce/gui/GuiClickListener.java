@@ -1,10 +1,13 @@
 package gg.steve.elemental.ce.gui;
 
+import gg.steve.elemental.bps.nbt.NBTItem;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class GuiClickListener implements Listener {
@@ -17,10 +20,13 @@ public class GuiClickListener implements Listener {
     @EventHandler
     public void guiItemClick(InventoryClickEvent event) {
         Player player = (Player) event.getWhoClicked();
+        if (event.getInventory().getType().equals(InventoryType.PLAYER)) return;
         if (AbstractGui.openInventories.get(player.getUniqueId()) != null) {
             event.setCancelled(true);
-            AbstractGui gui =
-                    AbstractGui.getInventoriesByID().get(AbstractGui.openInventories.get(player.getUniqueId()));
+            if (event.getCurrentItem() == null || event.getCurrentItem().getType().equals(Material.AIR)) return;
+            NBTItem nbtItem = new NBTItem(event.getCurrentItem());
+            if (!nbtItem.getBoolean("enchants.gui.item")) return;
+            AbstractGui gui = AbstractGui.getInventoriesByID().get(AbstractGui.openInventories.get(player.getUniqueId()));
             AbstractGui.inventoryClickActions clickAction = gui.getClickActions().get(event.getSlot());
             if (clickAction != null) {
                 clickAction.itemClick(player);
