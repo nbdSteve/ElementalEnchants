@@ -4,7 +4,7 @@ upgrade:
   type: prestige
   price: 1
 
-lore: '&6Backpack Buster {level}'
+lore: '&f&lBackpack Buster {level}'
 
 data:
   type: buster

@@ -4,6 +4,7 @@ import gg.steve.elemental.ce.nbt.NBTItem;
 import gg.steve.elemental.ce.utils.LogUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,6 +20,9 @@ public class PlayerEnchantManager implements Listener {
 
     public static void initialise() {
         players = new HashMap<>();
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            addEnchantPlayer(player.getUniqueId());
+        }
     }
 
     public static void addEnchantPlayer(UUID playerId) {
@@ -27,7 +31,8 @@ public class PlayerEnchantManager implements Listener {
         // load enchants from current item if they are holding one
         if (Bukkit.getPlayer(playerId) != null) {
             Player player = Bukkit.getPlayer(playerId);
-            if (player.getItemInHand() == null || player.getItemInHand().getType().equals(Material.AIR)) return;
+            if (player.getItemInHand() == null || player.getItemInHand().getType().equals(Material.AIR))
+                return;
             NBTItem item = new NBTItem(player.getItemInHand());
             if (EnchantManager.hasEnchants(item)) {
                 Map<String, Double> enchants = item.getObject("elemental-enchants", HashMap.class);
@@ -38,8 +43,15 @@ public class PlayerEnchantManager implements Listener {
                     PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
                 }
             }
-            if (!item.getItem().getEnchantments().isEmpty()) {
-
+            for (Enchantment enchantment : item.getItem().getEnchantments().keySet()) {
+                Enchant enchant;
+                try {
+                    enchant = EnchantManager.getVanillaEnchant(enchantment);
+                } catch (Exception e) {
+                    continue;
+                }
+                if (enchant == null) continue;
+                PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, item.getItem().getEnchantmentLevel(enchantment));
             }
         }
     }

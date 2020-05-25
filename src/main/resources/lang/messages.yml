@@ -1,26 +1,26 @@
 help:
-  - '&5&lEnchants &f>> &7Please contact nbdSteve#0583 on discord for command, permission and configuration help.'
+  - '&b&lEnchants &f» &7Please contact nbdSteve#0583 on discord for command, permission and configuration help.'
 
 reload:
-  - '&5&lEnchants &f>> &7You have successfully reloaded the plugin and player data.'
+  - '&b&lEnchants &f» &7You have successfully reloaded the plugin and player data.'
 
 unenchantable-item:
-  - '&5&lEnchants &f>> &7That item can not be enchanted, please hold the pickaxe you are trying to upgrade.'
+  - '&b&lEnchants &f» &7That item can not be enchanted, please hold the pickaxe you are trying to upgrade.'
 
 enchant-max-level:
-  - '&5&lEnchants &f>> &7Your item can not be upgraded because it already has the max level for that enchantment.'
+  - '&b&lEnchants &f» &7Your item can not be upgraded because it already has the max level for that enchantment.'
 
 upgrade-success:
-  - '&5&lEnchants &f>> &7Successfully upgraded the &6{enchant} &7enchantment to level &e{current-level}&7/&e{max-level}&7.'
+  - '&b&lEnchants &f» &7Successfully upgraded the &a{enchant} &7enchantment to level &a{current-level}&7/&a{max-level}&7.'
 
 insufficient-tokens:
-  - '&5&lEnchants &f>> &7You do not have enough &6{token-type} &7tokens to purchase that upgrade.'
+  - '&b&lEnchants &f» &7You do not have enough &a{token-type} &7tokens to purchase that upgrade.'
 
 lucky-block-drop:
-  - '&5&lEnchants &f>> &7You do not have mined a lucky block, what you found has a &6{percent}% &7drop rate.'
+  - '&b&lEnchants &f» &7You do not have mined a lucky block, what you found has a &a{percent}% &7drop rate.'
 
 add-enchant-adder:
-  - "&5&lEnchants &f>> &7Successfully enchanted &6{player}'s pickaxe with &6{enchant} &e&l{level}&7."
+  - "&b&lEnchants &f» &7Successfully enchanted &a{player}'s pickaxe with &a{enchant} &l{level}&7."
 
 add-enchant-receiver:
-  - '&5&lEnchants &f>> &7Your pickaxe has been enchanted with &6{enchant} &e&l{level}&7.'
+  - '&b&lEnchants &f» &7Your pickaxe has been enchanted with &a{enchant} &l{level}&7.'

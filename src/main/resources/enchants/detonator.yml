@@ -4,7 +4,7 @@ upgrade:
   type: prestige
   price: 1
 
-lore: '&6Detonator {level}'
+lore: '&f&lDetonator {level}'
 
 data:
   type: regional
@@ -14,7 +14,7 @@ data:
   message:
     enabled: true # sell message is handled in backpacks/messages.yml
     text:
-      - '&5&lEnchants &f>> &6DETONATOR &7just proced and mined the entire mine for you &7&o((&e&o{amount} &7&oblocks)).'
+      - '&b&lEnchants &f» &fDETONATOR &7just proced and mined the entire mine for you &7&o((&a&o{amount} &7&oblocks)).'
   sound:
     enabled: true
     type: 'villager_yes'

@@ -4,176 +4,176 @@ size: 45
 1:
   slot: 10
   action: haste
-  name: '&e&lHASTE'
+  name: '&6&lHASTE'
   material: beacon
   data: 0
   lore:
     - ''
     - '&7&oIncrease speed while mining.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 2:
   slot: 12
   action: speed
-  name: '&e&lSPEED'
+  name: '&6&lSPEED'
   material: feather
   data: 0
   lore:
     - ''
     - '&7&oIncrease walking speed.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 3:
   slot: 14
   action: night-vision
-  name: '&e&lNIGHT VISION'
+  name: '&6&lNIGHT VISION'
   material: glowstone
   data: 0
   lore:
     - ''
     - '&7&oAbility to see in the dark.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 4:
   slot: 16
   action: merchant
-  name: '&e&lMERCHANT'
+  name: '&6&lMERCHANT'
   material: emerald
   data: 0
   lore:
     - ''
     - '&7&oChance to sell your backpack for double price.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 5:
   slot: 20
   action: efficiency
-  name: '&e&lEFFICIENCY'
+  name: '&6&lEFFICIENCY'
   material: diamond_pickaxe
   data: 0
   lore:
     - ''
     - '&7&oIncrease dig speed.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 6:
   slot: 22
   action: fortune
-  name: '&e&lFORTUNE'
+  name: '&6&lFORTUNE'
   material: gold_block
   data: 0
   lore:
     - ''
     - '&7&oIncrease drops from ALL blocks.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 7:
   slot: 24
   action: tokenator
-  name: '&e&lTOKENATOR'
+  name: '&6&lTOKENATOR'
   material: double_plant
   data: 0
   lore:
     - ''
     - '&7&oChance to double tokens when they drop while mining.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 8:
   slot: 28
   action: luck
-  name: '&e&lLUCK'
+  name: '&6&lLUCK'
   material: sponge
   data: 0
   lore:
     - ''
     - '&7&oChance to find lucky blocks while mining.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 9:
   slot: 30
   action: excavator
-  name: '&e&lEXCAVATOR'
+  name: '&6&lEXCAVATOR'
   material: redstone_torch_on
   data: 0
   lore:
     - ''
     - '&7&oChance to clear 1 layer of the mine your are in.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 10:
   slot: 32
   action: miners-luck
-  name: '&e&lMINERS LUCK'
+  name: '&6&lMINERS LUCK'
   material: exp_bottle
   data: 0
   lore:
     - ''
     - '&7&oIncreased miner pass experience drops.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 11:
   slot: 34
   action: explosive
-  name: '&e&lEXPLOSIVE'
+  name: '&6&lEXPLOSIVE'
   material: tnt
   data: 0
   lore:
     - ''
     - '&7&oIncreased chance to explode blocks around you.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes

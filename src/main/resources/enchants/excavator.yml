@@ -4,7 +4,7 @@ upgrade:
   type: token
   price: 20
 
-lore: '&eExcavator {level}'
+lore: '&bExcavator {level}'
 
 data:
   type: regional
@@ -14,7 +14,7 @@ data:
   message:
     enabled: true
     text:
-      - '&5&lEnchants &f>> &6EXCAVATOR &7just proced and mined the layer of the mine for you &7&o((&e&o{amount} &7&oblocks)).'
+      - '&b&lEnchants &f» &bEXCAVATOR &7just proced and mined the layer of the mine for you &7&o((&a&o{amount} &7&oblocks)).'
   sound:
     enabled: true
     type: 'villager_yes'

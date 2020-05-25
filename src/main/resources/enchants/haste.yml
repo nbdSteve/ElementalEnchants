@@ -4,7 +4,7 @@ upgrade:
   type: token
   price: 50
 
-lore: '&eHaste {level}'
+lore: '&bHaste {level}'
 
 data:
   type: potion
@@ -13,9 +13,9 @@ data:
   message:
     enabled: true
     text:
-      - '&6[+] &eHaste'
+      - '&b&lEnchants &f» &7(&a+&7) &bHaste &l{level}'
     remove:
-      - '&6[-] &eHaste'
+      - '&b&lEnchants &f» &7(&c-&7) &bHaste &l{level}'
   sound:
     enabled: false
     type: 'villager_yes'

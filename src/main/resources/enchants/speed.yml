@@ -13,9 +13,9 @@ data:
   message:
     enabled: true
     text:
-      - '&6[+] &eSpeed'
+      - '&b&lEnchants &f» &7(&a+&7) &bSpeed &l{level}'
     remove:
-      - '&6[-] &eSpeed'
+      - '&b&lEnchants &f» &7(&c-&7) &bSpeed &l{level}'
   sound:
     enabled: false
     type: 'villager_yes'

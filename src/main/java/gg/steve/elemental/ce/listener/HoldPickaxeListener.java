@@ -5,6 +5,7 @@ import gg.steve.elemental.ce.core.EnchantManager;
 import gg.steve.elemental.ce.core.PlayerEnchantManager;
 import gg.steve.elemental.ce.nbt.NBTItem;
 import gg.steve.elemental.ce.utils.EnchantProcUtil;
+import gg.steve.elemental.ce.utils.LogUtil;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -134,15 +135,16 @@ public class HoldPickaxeListener implements Listener {
                 int level = (int) Math.round(enchants.get(enchantName));
                 PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, level);
             }
-            for (Enchantment enchantment : item.getItem().getEnchantments().keySet()) {
-                Enchant enchant;
-                try {
-                    enchant = EnchantManager.getVanillaEnchant(enchantment);
-                } catch (Exception e) {
-                    continue;
-                }
-                PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, item.getItem().getEnchantmentLevel(enchantment));
+        }
+        for (Enchantment enchantment : item.getItem().getEnchantments().keySet()) {
+            Enchant enchant;
+            try {
+                enchant = EnchantManager.getVanillaEnchant(enchantment);
+            } catch (Exception e) {
+                continue;
             }
+            if (enchant == null) continue;
+            PlayerEnchantManager.addEnchantToPlayer(player.getUniqueId(), enchant, item.getItem().getEnchantmentLevel(enchantment));
         }
     }
 
@@ -151,18 +153,20 @@ public class HoldPickaxeListener implements Listener {
             Map<String, Double> enchants = item.getObject("elemental-enchants", HashMap.class);
             for (String enchantName : enchants.keySet()) {
                 Enchant enchant = EnchantManager.getEnchant(enchantName);
+                int level = (int) Math.round(enchants.get(enchantName));
                 PlayerEnchantManager.removeEnchantFromPlayer(player.getUniqueId(), enchant);
-                EnchantProcUtil.doRemove(enchant.getConfig().getConfigurationSection("data"), player);
+                EnchantProcUtil.doRemove(enchant.getConfig().getConfigurationSection("data"), player, level);
             }
-            for (Enchantment enchantment : item.getItem().getEnchantments().keySet()) {
-                Enchant enchant;
-                try {
-                    enchant = EnchantManager.getVanillaEnchant(enchantment);
-                } catch (Exception e) {
-                    continue;
-                }
-                PlayerEnchantManager.removeEnchantFromPlayer(player.getUniqueId(), enchant);
+        }
+        for (Enchantment enchantment : item.getItem().getEnchantments().keySet()) {
+            Enchant enchant;
+            try {
+                enchant = EnchantManager.getVanillaEnchant(enchantment);
+            } catch (Exception e) {
+                continue;
             }
+            if (enchant == null) continue;
+            PlayerEnchantManager.removeEnchantFromPlayer(player.getUniqueId(), enchant);
         }
     }
 }

@@ -44,7 +44,7 @@ public class PotionEnchantData implements EnchantData {
         PotionEffect effect = new PotionEffect(this.type, this.duration, enchantLevel - 1);
         potionCheck(player, this.type, enchantLevel - 1);
         player.addPotionEffect(effect);
-        EnchantProcUtil.doProc(this.section, player);
+        EnchantProcUtil.doProc(this.section, player, enchantLevel);
     }
 
     @Override

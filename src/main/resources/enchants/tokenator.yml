@@ -4,7 +4,7 @@ upgrade:
   type: token
   price: 50
 
-lore: '&eTokenator {level}'
+lore: '&bTokenator {level}'
 
 data:
   type: tokenator

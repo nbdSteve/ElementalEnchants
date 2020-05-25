@@ -60,7 +60,7 @@ public enum MessageType {
 
     public static void doMessage(Player receiver, List<String> lines, int amount) {
         for (String line : lines) {
-            receiver.sendMessage(ColorUtil.colorize(line).replace("{amount}", ElementalTokens.getNumberFormat().format(amount)));
+            receiver.sendMessage(ColorUtil.colorize(line).replace("{amount}", ElementalTokens.getNumberFormat().format(amount)).replace("{level}", ElementalTokens.getNumberFormat().format(amount)));
         }
     }
 }

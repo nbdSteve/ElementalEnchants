@@ -29,7 +29,7 @@ public class GuiClickListener implements Listener {
             AbstractGui gui = AbstractGui.getInventoriesByID().get(AbstractGui.openInventories.get(player.getUniqueId()));
             AbstractGui.inventoryClickActions clickAction = gui.getClickActions().get(event.getSlot());
             if (clickAction != null) {
-                clickAction.itemClick(player);
+                clickAction.itemClick(player, event.getClick());
             }
         }
     }

@@ -1,12 +1,10 @@
 package gg.steve.elemental.ce.gui;
 
-import gg.steve.elemental.ce.managers.Files;
 import gg.steve.elemental.ce.utils.ColorUtil;
-import gg.steve.elemental.ce.utils.LogUtil;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -127,6 +125,6 @@ public abstract class AbstractGui {
      * Interface to create a click action
      */
     public interface inventoryClickActions {
-        void itemClick(Player player);
+        void itemClick(Player player, ClickType click);
     }
 }

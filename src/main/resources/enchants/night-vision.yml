@@ -4,7 +4,7 @@ upgrade:
   type: token
   price: 100
 
-lore: '&eNight Vision {level}'
+lore: '&bNight Vision {level}'
 
 data:
   type: potion
@@ -13,9 +13,9 @@ data:
   message:
     enabled: true
     text:
-      - '&6[+] &eNight Vision'
+      - '&b&lEnchants &f» &7(&a+&7) &bNight Vision &l{level}'
     remove:
-      - '&6[-] &eNight Vision'
+      - '&b&lEnchants &f» &7(&c-&7) &bNight Vision &l{level}'
   sound:
     enabled: false
     type: 'villager_yes'

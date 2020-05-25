@@ -4,7 +4,7 @@ upgrade:
   type: token
   price: 20
 
-lore: '&eExplosive {level}'
+lore: '&bExplosive {level}'
 
 data:
   type: explosive
@@ -15,7 +15,7 @@ data:
   message:
     enabled: true # sell message is handled in backpacks/messages.yml
     text:
-      - '&5&lEnchants &f>> &6EXPLOSIVE &7just proced and blew up some blocks around you.'
+      - '&b&lEnchants &f» &bEXPLOSIVE &7just proced and blew up some blocks around you.'
   sound:
     enabled: true
     type: 'villager_yes'

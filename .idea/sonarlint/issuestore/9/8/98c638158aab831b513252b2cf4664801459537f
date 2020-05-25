@@ -1,15 +1,15 @@
 
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ºœ„èŸ.
-S
-java:S1874f"1Remove this use of "ItemStack"; it is deprecated.(µÄ¯‰ÿÿÿÿÿ8ÿâïçŸ.
 W
-java:S1874L"5Remove this use of "getItemInHand"; it is deprecated.(ŞÌÀùÿÿÿÿ8ø‡ÖÁ.
-R
-java:S1874_"5Remove this use of "getItemInHand"; it is deprecated.(ñïÔ•8ø‡ÖÁ.
-j
-java:S11923"HDefine a constant instead of duplicating this literal ".action" 3 times.(æÎøÿÿÿÿ8‘¹áÁ.
-Q
-java:S1874]"5Remove this use of "getItemInHand"; it is deprecated.(ïÊ¼8ûßïı.
+java:S1874S"5Remove this use of "getItemInHand"; it is deprecated.(ŞÌÀùÿÿÿÿ8²ùˆ¾£.
+W
+java:S1874d"5Remove this use of "getItemInHand"; it is deprecated.(¤¼™·ûÿÿÿÿ8²ùˆ¾£.
+e
+java:S11924"HDefine a constant instead of duplicating this literal ".action" 5 times.(Ö™Âú8‘¹áÁ.
 M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ºœ„èŸ.
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ºœ„èŸ.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ºœ„èŸ.
+W
+java:S1874f"5Remove this use of "getItemInHand"; it is deprecated.(óˆ¥üÿÿÿÿ8²ùˆ¾£.
+S
+java:S1874m"1Remove this use of "ItemStack"; it is deprecated.(µÄ¯‰ÿÿÿÿÿ8ÿâïçŸ.

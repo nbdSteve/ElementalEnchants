@@ -4,7 +4,7 @@ upgrade:
   type: token
   price: 20
 
-lore: '&eMiners Luck {level}'
+lore: '&bMiners Luck {level}'
 
 data:
   type: command

@@ -1,67 +1,67 @@
-name: '&b&lPrestige Enchantments'
+name: '&f&lPrestige Enchantments'
 type: none
 size: 27
 1:
   slot: 10
   action: booster-finder
-  name: '&e&lBOOSTER FINDER'
+  name: '&f&lBOOSTER FINDER'
   material: nether_brick
   data: 0
   lore:
     - ''
     - '&7&oIncrease your chance to find booster while mining.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 2:
   slot: 12
   action: backpack-buster
-  name: '&e&lBACKPACK BUSTER'
+  name: '&f&lBACKPACK BUSTER'
   material: chest
   data: 0
   lore:
     - ''
     - '&7&oIncreased chance to sell your backpack while mining.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 3:
   slot: 14
   action: key-extractor
-  name: '&e&lKEY EXTRACTOR'
+  name: '&f&lKEY EXTRACTOR'
   material: tripwire_hook
   data: 0
   lore:
     - ''
     - '&7&oIncreased chance to find keys while mining.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes
 4:
   slot: 16
   action: detonator
-  name: '&e&lDETONATOR'
+  name: '&f&lDETONATOR'
   material: tnt
   data: 0
   lore:
     - ''
     - '&7&oChance to clear the whole mine you are in.'
     - ''
-    - '&5Current Level&f| &d&l{current-level}'
-    - '&5Max Level&f| &d&l{max-level}'
-    - '&5Upgrade&f| &d{balance}&7/&d{upgrade-price} &aTokens'
+    - '&3Current Level&7| &f&l{current-level}'
+    - '&3Max Level&7| &f&l{max-level}'
+    - '&3Upgrade&7| &f{balance}&7/&f{upgrade-price} Tokens'
   enchantments:
   item-flags:
     - hide_attributes

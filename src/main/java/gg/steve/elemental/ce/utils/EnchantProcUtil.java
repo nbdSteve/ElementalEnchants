@@ -11,6 +11,7 @@ public class EnchantProcUtil {
             MessageType.doMessage(player, section.getStringList("message.text"));
         }
         SoundUtil.playSound(section, player);
+
     }
 
     public static void doProc(ConfigurationSection section, Player player, int amount) {
@@ -20,9 +21,9 @@ public class EnchantProcUtil {
         SoundUtil.playSound(section, player);
     }
 
-    public static void doRemove(ConfigurationSection section, Player player) {
+    public static void doRemove(ConfigurationSection section, Player player, int level) {
         if (section.getBoolean("message.enabled")) {
-            MessageType.doMessage(player, section.getStringList("message.remove"));
+            MessageType.doMessage(player, section.getStringList("message.remove"), level);
         }
     }
 }

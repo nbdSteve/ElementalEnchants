@@ -11,6 +11,7 @@ import gg.steve.elemental.tokens.api.TokensApi;
 import gg.steve.elemental.tokens.core.TokenPlayer;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -29,9 +30,11 @@ public class PrestigeEnchantsGui extends AbstractGui {
         this.config = config;
         for (int i = 0; i < config.getInt("size"); i++) {
             if (i % 2 == 0) {
-                setItemInSlot(i, getFillerGlass((byte) 10), player -> {});
+                setItemInSlot(i, getFillerGlass((byte) 10), (player, click) -> {
+                });
             } else {
-                setItemInSlot(i, getFillerGlass((byte) 0), player -> {});
+                setItemInSlot(i, getFillerGlass((byte) 0), (player, click) -> {
+                });
             }
         }
         refresh(ePlayer);
@@ -45,7 +48,7 @@ public class PrestigeEnchantsGui extends AbstractGui {
             } catch (Exception e) {
                 continue;
             }
-            setItemInSlot(config.getInt(entry + ".slot"), GuiItemUtil.createItem(config, entry, config.getString(entry + ".action"), ePlayer), player -> {
+            setItemInSlot(config.getInt(entry + ".slot"), GuiItemUtil.createItem(config, entry, config.getString(entry + ".action"), ePlayer), (player, click) -> {
                 switch (config.getString(entry + ".action")) {
                     case "none":
                         break;
@@ -57,15 +60,21 @@ public class PrestigeEnchantsGui extends AbstractGui {
                         ElementalTokens.openShopGui(player);
                         break;
                     default:
-                        doEnchantmentUpgrade(EnchantManager.getEnchant(config.getString(entry + ".action")));
+                        if (click.equals(ClickType.RIGHT)) {
+                            doEnchantmentUpgrade(EnchantManager.getEnchant(config.getString(entry + ".action")), 10);
+                        } else if (click.equals(ClickType.MIDDLE)) {
+                            doEnchantmentUpgrade(EnchantManager.getEnchant(config.getString(entry + ".action")), 100);
+                        } else {
+                            doEnchantmentUpgrade(EnchantManager.getEnchant(config.getString(entry + ".action")), 1);
+                        }
                         break;
                 }
             });
         }
     }
 
-    public void doEnchantmentUpgrade(Enchant enchant) {
-        if (this.ePlayer.getEnchantLevel(enchant) >= enchant.getMaxLevel()) {
+    public void doEnchantmentUpgrade(Enchant enchant, int increase) {
+        if ((this.ePlayer.getEnchantLevel(enchant) + increase) > enchant.getMaxLevel()) {
             this.ePlayer.getPlayer().closeInventory();
             MessageType.ENCHANT_MAX_LEVEL.message(this.ePlayer.getPlayer());
             return;
@@ -78,16 +87,20 @@ public class PrestigeEnchantsGui extends AbstractGui {
         // check that player has enough money first
         if (TokensApi.getInstance() != null) {
             TokenPlayer tokenPlayer = TokensApi.getTokenPlayer(this.ePlayer.getPlayerId());
-            if (tokenPlayer.getTokens(enchant.getUpgradeType()) < enchant.getUpgradePrice()) {
+            if (tokenPlayer.getTokens(enchant.getUpgradeType()) < (enchant.getUpgradePrice() * increase)) {
                 MessageType.INSUFFICIENT_TOKENS.message(this.ePlayer.getPlayer(), enchant.getUpgradeType().name());
                 this.ePlayer.getPlayer().closeInventory();
                 return;
             } else {
-                tokenPlayer.removeTokens(enchant.getUpgradeType(), enchant.getUpgradePrice());
+                tokenPlayer.removeTokens(enchant.getUpgradeType(), enchant.getUpgradePrice() * increase);
             }
         }
-        EnchantManager.applyEnchant(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + 1);
-        this.ePlayer.openPrestigeEnchantsGui();
+        if (enchant.getData().getVanillaEnchantment() != null) {
+            EnchantManager.applyVanilla(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + increase);
+        } else {
+            EnchantManager.applyEnchant(this.ePlayer.getPlayer(), new NBTItem(this.ePlayer.getPlayer().getItemInHand()), enchant, this.ePlayer.getEnchantLevel(enchant) + increase);
+        }
+        refresh(ePlayer);
         MessageType.UPGRADE_SUCCESS.message(this.ePlayer.getPlayer(), enchant.getName(), ElementalTokens.getNumberFormat().format(this.ePlayer.getEnchantLevel(enchant)), ElementalTokens.getNumberFormat().format(enchant.getMaxLevel()));
     }
 

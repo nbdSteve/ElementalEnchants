@@ -46,7 +46,7 @@ public class CommandEnchantData implements EnchantData {
         if (Math.random() * 100 > (this.baseRate + (this.multiplier * enchantLevel))) return;
         int drop = 0;
         if (this.commands.size() > 1) {
-            drop = new Random().nextInt(this.commands.size() - 1);
+            drop = new Random().nextInt(this.commands.size());
         }
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), this.commands.get(drop).replace("{player}", event.getPlayer().getName()));
         EnchantProcUtil.doProc(section, event.getPlayer());

@@ -7,6 +7,7 @@ import gg.steve.elemental.ce.utils.ColorUtil;
 import gg.steve.elemental.ce.utils.ItemBuilderUtil;
 import gg.steve.elemental.ce.utils.LogUtil;
 import gg.steve.elemental.ce.utils.YamlFileUtil;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -74,7 +75,8 @@ public class EnchantManager {
         if (upgrade) {
             if (!builderUtil.getLore().isEmpty()) {
                 for (int i = 0; i < builderUtil.getLore().size(); i++) {
-                    if (builderUtil.getLore().get(i).equalsIgnoreCase(ColorUtil.colorize(enchant.getLore().replace("{level}", String.valueOf(currentLevel))))) {
+                    String line = ChatColor.stripColor(builderUtil.getLore().get(i));
+                    if (line.equalsIgnoreCase(ChatColor.stripColor(ColorUtil.colorize(enchant.getLore().replace("{level}", String.valueOf(currentLevel)))))) {
                         builderUtil.getLore().remove(i);
                     }
                 }
